@@ -26,6 +26,7 @@
         </nav>
 
         <main class="content">
+            <!-- HOME -->
             <div id="home-page">
                 <section class="card" style="text-align: center;">
                     <h2>Adres IP Serwera</h2>
@@ -37,20 +38,22 @@
                 </section>
             </div>
 
+            <!-- SPOŁECZNOŚĆ -->
             <div id="community-page" style="display: none;">
                 <h1 class="big-white-title">Społeczność</h1>
-                <div class="fb-post">
+                <div class="card post-creator">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
                         <textarea id="postInput" placeholder="Napisz coś do społeczności..."></textarea>
                     </div>
-                    <div style="text-align: right;">
+                    <div style="text-align: right; margin-top: 10px;">
                         <button class="buy-btn" onclick="addPost()">Opublikuj</button>
                     </div>
                 </div>
                 <div id="postContainer"></div>
             </div>
 
+            <!-- SKLEP -->
             <div id="shop-page" style="display: none;">
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
@@ -94,6 +97,7 @@
                 </section>
             </div>
 
+            <!-- REGULAMIN -->
             <div id="rules-page" style="display: none;">
                 <h1 class="big-white-title">Regulamin</h1>
                 <section class="card rules-box">
@@ -101,11 +105,12 @@
                     <ul>
                         <li>1. Nieznajomość regulaminu nie zwalnia z kar.</li>
                         <li>2. Zakaz używania cheatów i wspomagaczy.</li>
-                        <li>3. Szanuj innych graczy.</li>
+                        <li>3. Szanuj innych graczy i administrację.</li>
                     </ul>
                 </section>
             </div>
 
+            <!-- OCEŃ NAS -->
             <div id="rate-page" style="display: none;">
                 <h1 class="big-white-title">Oceń serwer</h1>
                 <section class="card">
@@ -127,14 +132,15 @@
         </main>
     </div>
 
+    <!-- MODAL -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
             <h2 style="color:#333; margin-bottom: 20px;">Zakup: <span id="currentRank">Ranga</span></h2>
             <div class="payment-buttons">
                 <!-- TUTAJ WKLEJ SWÓJ LINK DO DISCORDA -->
-                <a href="https://discord.gg/TWÓJ_KOD" target="_blank" class="pay-btn paypal">Płacę przez PayPal</a>
-                <a href="https://discord.gg/TWÓJ_KOD" target="_blank" class="pay-btn psc">Płacę przez PaySafeCard</a>
+                <a href="https://discord.gg/TU_WKLEJ_LINK" target="_blank" class="pay-btn paypal">Płacę przez PayPal</a>
+                <a href="https://discord.gg/TU_WKLEJ_LINK" target="_blank" class="pay-btn psc">Płacę przez PaySafeCard</a>
             </div>
         </div>
     </div>
@@ -166,11 +172,17 @@
         }
 
         function renderPost(post, prepend = false) {
-            const html = `<div class="fb-post">
-                <div class="post-header"><img src="https://minotar.net/avatar/Steve/40.png"><strong>Gracz Xelox</strong></div>
-                <div class="post-content">${post.text}</div>
-                <button class="fb-btn" onclick="likePost(${post.id})"><i class="fa fa-thumbs-up"></i> (<span id="l-${post.id}">${post.likes}</span>)</button>
-            </div>`;
+            const html = `
+                <div class="card fb-post">
+                    <div class="post-header">
+                        <img src="https://minotar.net/avatar/Steve/40.png">
+                        <strong>Gracz XeloxMC</strong>
+                    </div>
+                    <div class="post-content">${post.text}</div>
+                    <button class="fb-btn" onclick="likePost(${post.id})">
+                        <i class="fa fa-thumbs-up"></i> (<span id="l-${post.id}">${post.likes}</span>)
+                    </button>
+                </div>`;
             const container = document.getElementById('postContainer');
             if(prepend) container.insertAdjacentHTML('afterbegin', html);
             else container.insertAdjacentHTML('beforeend', html);
@@ -178,7 +190,7 @@
 
         function likePost(id) {
             let liked = JSON.parse(localStorage.getItem('user_liked')) || [];
-            if(liked.includes(id)) { alert("Już polubiłeś ten post!"); return; }
+            if(liked.includes(id)) return;
             let posts = JSON.parse(localStorage.getItem('xelox_posts'));
             const post = posts.find(p => p.id === id);
             post.likes++;
@@ -192,7 +204,7 @@
             const nick = document.getElementById('rateNick').value || "Anonim";
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
-            if(!text || !stars) { alert("Wybierz gwiazdki i wpisz tekst!"); return; }
+            if(!text || !stars) return;
             const newR = { stars: stars.value, nick: nick, text: text };
             const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
             reviews.unshift(newR);
