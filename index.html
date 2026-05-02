@@ -16,6 +16,7 @@
     </header>
 
     <div class="container">
+        <!-- NAWIGACJA -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
@@ -26,14 +27,14 @@
         </nav>
 
         <main class="content">
-            <!-- STRONA GŁÓWNA -->
+            <!-- HOME -->
             <div id="home-page">
                 <section class="card" style="text-align: center;">
                     <h2>Adres IP Serwera</h2>
                     <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
                     <p>Skopiuj i wklej w Minecraft!</p>
                     <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
-                    <h2>Wersje</h2>
+                    <h2>Dostępne Wersje</h2>
                     <p class="versions">1.21 - 1.21.11</p>
                 </section>
             </div>
@@ -44,7 +45,7 @@
                 <div class="fb-post">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
-                        <textarea id="postInput" placeholder="Napisz coś do społeczności..."></textarea>
+                        <textarea id="postInput" placeholder="Napisz coś do społeczności XeloxMC..."></textarea>
                     </div>
                     <div style="text-align: right;">
                         <button class="buy-btn" style="width: auto; padding: 10px 30px;" onclick="addPost()">Opublikuj</button>
@@ -55,10 +56,9 @@
 
             <!-- SKLEP (5 PEŁNYCH RANG) -->
             <div id="shop-page" style="display: none;">
-                <h1 class="big-white-title">Sklep</h1>
+                <h1 class="big-white-title">Sklep Serwerowy</h1>
                 <section class="card">
                     <div class="rank-list">
-                        <!-- Ranga 1 -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Steve/80.png">
@@ -66,7 +66,6 @@
                                 <button class="buy-btn shop-btn" onclick="openPaymentModal('VIP')">KUP TERAZ</button>
                             </div>
                         </div>
-                        <!-- Ranga 2 -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Alex/80.png">
@@ -74,7 +73,6 @@
                                 <button class="buy-btn shop-btn" onclick="openPaymentModal('SVIP')">KUP TERAZ</button>
                             </div>
                         </div>
-                        <!-- Ranga 3 -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Herobrine/80.png">
@@ -82,7 +80,6 @@
                                 <button class="buy-btn shop-btn" onclick="openPaymentModal('Sponsor')">KUP TERAZ</button>
                             </div>
                         </div>
-                        <!-- Ranga 4 -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Notch/80.png">
@@ -90,7 +87,6 @@
                                 <button class="buy-btn shop-btn" onclick="openPaymentModal('Elita')">KUP TERAZ</button>
                             </div>
                         </div>
-                        <!-- Ranga 5 -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/MHF_Golem/80.png">
@@ -102,28 +98,35 @@
                 </section>
             </div>
 
-            <!-- REGULAMIN -->
+            <!-- REGULAMIN (PEŁNY) -->
             <div id="rules-page" style="display: none;">
-                <h1 class="big-white-title">Regulamin</h1>
+                <h1 class="big-white-title">Regulamin Serwera</h1>
                 <section class="card rules-box">
-                    <h3>I. Zasady Ogólne</h3>
+                    <h3>I. Postanowienia Ogólne</h3>
                     <ul>
-                        <li>1. Nieznajomość regulaminu nie zwalnia z kar.</li>
-                        <li>2. Zakaz używania wspomagaczy i cheatów.</li>
-                        <li>3. Szanuj innych graczy i administrację.</li>
-                        <li>4. Zakaz reklamowania innych serwerów.</li>
+                        <li>1. Nieznajomość regulaminu nie zwalnia z jego przestrzegania.</li>
+                        <li>2. Administracja ma prawo do zmiany regulaminu bez uprzedzenia.</li>
+                        <li>3. Każdy gracz zobowiązany jest do godnego reprezentowania serwera.</li>
                     </ul>
-                    <h3>II. Płatności</h3>
+                    <h3>II. Zasady Rozgrywki</h3>
                     <ul>
-                        <li>1. Rangi są przypisane do konta.</li>
-                        <li>2. Brak zwrotów po zakupie usługi.</li>
+                        <li>1. Zakaz używania cheatów (X-Ray, Killaura, Fly itp.).</li>
+                        <li>2. Zakaz wykorzystywania błędów gry - należy je zgłaszać.</li>
+                        <li>3. Zakaz griefowania i niszczenia cudzych budowli.</li>
+                        <li>4. Zakaz reklamowania innych serwerów oraz stron WWW.</li>
+                    </ul>
+                    <h3>III. Kultura i Zachowanie</h3>
+                    <ul>
+                        <li>1. Zakaz obrażania innych graczy oraz administracji.</li>
+                        <li>2. Czat służy do komunikacji, zakaz spamu i nadmiernego Caps Locka.</li>
+                        <li>3. Zabrania się szerzenia mowy nienawiści.</li>
                     </ul>
                 </section>
             </div>
 
             <!-- OCEŃ NAS -->
             <div id="rate-page" style="display: none;">
-                <h1 class="big-white-title">Oceń serwer</h1>
+                <h1 class="big-white-title">Oceń nasz serwer!</h1>
                 <section class="card">
                     <div class="rating-form">
                         <div class="stars-input">
@@ -133,9 +136,9 @@
                             <input type="radio" name="star" id="s2" value="2"><label for="s2" class="fa fa-star"></label>
                             <input type="radio" name="star" id="s1" value="1"><label for="s1" class="fa fa-star"></label>
                         </div>
-                        <input type="text" id="rateNick" placeholder="Twój nick...">
+                        <input type="text" id="rateNick" placeholder="Twój nick Minecraft...">
                         <textarea id="rateText" placeholder="Twoja opinia..."></textarea>
-                        <button class="buy-btn" onclick="submitRating()">Wyślij</button>
+                        <button class="buy-btn" onclick="submitRating()">Wyślij opinię</button>
                     </div>
                     <div id="reviews-list"></div>
                 </section>
@@ -147,10 +150,10 @@
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:#333">Kupujesz: <span id="currentRank">Ranga</span></h2>
+            <h2 style="color:#333">Zakup: <span id="selectedRank">Ranga</span></h2>
             <div class="payment-buttons">
-                <a href="#" class="pay-btn paypal" onclick="payAlert('PayPal')">Zapłać przez PayPal</a>
-                <a href="#" class="pay-btn psc" onclick="payAlert('PaySafeCard')">Zapłać przez PSC</a>
+                <a href="javascript:void(0)" class="pay-btn paypal" onclick="confirmPay('PayPal')">Płacę przez PayPal</a>
+                <a href="javascript:void(0)" class="pay-btn psc" onclick="confirmPay('PaySafeCard')">Płacę przez PaySafeCard</a>
             </div>
         </div>
     </div>
@@ -161,6 +164,7 @@
                 document.getElementById(p + '-page').style.display = 'none';
             });
             document.getElementById(pageId + '-page').style.display = 'block';
+            window.scrollTo(0,0);
         }
 
         function loadData() {
@@ -182,26 +186,32 @@
         }
 
         function renderPost(post, prepend = false) {
-            const html = `<div class="fb-post">
-                <div class="post-header"><img src="https://minotar.net/avatar/Steve/40.png"><strong>Gracz Xelox</strong></div>
-                <div class="post-content">${post.text}</div>
-                <button class="fb-btn" onclick="likePost(${post.id})"><i class="fa fa-thumbs-up"></i> (<span id="l-${post.id}">${post.likes}</span>)</button>
-            </div>`;
+            const html = `
+                <div class="fb-post">
+                    <div class="post-header">
+                        <img src="https://minotar.net/avatar/Steve/40.png">
+                        <strong>Gracz XeloxMC</strong>
+                    </div>
+                    <div class="post-content">${post.text}</div>
+                    <button class="fb-btn" onclick="likePost(${post.id})">
+                        <i class="fa fa-thumbs-up"></i> (<span id="likes-${post.id}">${post.likes}</span>)
+                    </button>
+                </div>`;
             const container = document.getElementById('postContainer');
             if(prepend) container.insertAdjacentHTML('afterbegin', html);
             else container.insertAdjacentHTML('beforeend', html);
         }
 
         function likePost(id) {
-            let liked = JSON.parse(localStorage.getItem('user_liked')) || [];
-            if(liked.includes(id)) { alert("Już polubiłeś ten post!"); return; }
+            let liked = JSON.parse(localStorage.getItem('user_liked_posts')) || [];
+            if(liked.includes(id)) { alert("Już to lubisz!"); return; }
             let posts = JSON.parse(localStorage.getItem('xelox_posts'));
             const post = posts.find(p => p.id === id);
             post.likes++;
             liked.push(id);
             localStorage.setItem('xelox_posts', JSON.stringify(posts));
-            localStorage.setItem('user_liked', JSON.stringify(liked));
-            document.getElementById('l-'+id).innerText = post.likes;
+            localStorage.setItem('user_liked_posts', JSON.stringify(liked));
+            document.getElementById(`likes-${id}`).innerText = post.likes;
         }
 
         function submitRating() {
@@ -209,11 +219,11 @@
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
             if(!text || !stars) return;
-            const newR = { stars: stars.value, nick: nick, text: text };
-            const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
-            reviews.unshift(newR);
-            localStorage.setItem('xelox_reviews', JSON.stringify(reviews));
-            renderReview(newR, true);
+            const nr = { stars: stars.value, nick: nick, text: text };
+            const rs = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
+            rs.unshift(nr);
+            localStorage.setItem('xelox_reviews', JSON.stringify(rs));
+            renderReview(nr, true);
         }
 
         function renderReview(r, prepend = false) {
@@ -222,12 +232,12 @@
             else document.getElementById('reviews-list').insertAdjacentHTML('beforeend', html);
         }
 
-        function openPaymentModal(rank) {
-            document.getElementById('currentRank').innerText = rank;
+        function openPaymentModal(r) {
+            document.getElementById('selectedRank').innerText = r;
             document.getElementById('paymentModal').style.display = 'flex';
         }
         function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
-        function payAlert(m) { alert("Przekierowanie do płatności " + m + " za rangę " + document.getElementById('currentRank').innerText); }
+        function confirmPay(m) { alert("Przekierowanie do: " + m + " za rangę " + document.getElementById('selectedRank').innerText); }
     </script>
 </body>
 </html>
