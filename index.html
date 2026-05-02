@@ -16,7 +16,6 @@
     </header>
 
     <div class="container">
-        <!-- MENU BOCZNE -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
@@ -26,9 +25,8 @@
             <button class="menu-tile link-tile" onclick="showPage('rate')">Oceń nas!</button>
         </nav>
 
-        <!-- TREŚĆ GŁÓWNA -->
         <main class="content">
-            
+            <!-- HOME -->
             <div id="home-page">
                 <section class="card">
                     <h2>Adres IP Serwera</h2>
@@ -40,89 +38,73 @@
                 </section>
             </div>
 
+            <!-- COMMUNITY -->
             <div id="community-page" style="display: none;">
                 <h1 class="big-white-title">Społeczność</h1>
-                <div class="fb-post new-post-box">
+                <div class="fb-post">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
                         <textarea id="postInput" placeholder="Napisz coś do społeczności..."></textarea>
                     </div>
-                    <div class="post-footer" style="justify-content: flex-end; border:none;">
-                        <button class="buy-btn" style="width: auto; padding: 8px 25px;" onclick="addPost()">Opublikuj</button>
+                    <div style="text-align: right;">
+                        <button class="buy-btn" style="width: auto; padding: 10px 30px;" onclick="addPost()">Opublikuj</button>
                     </div>
                 </div>
                 <div id="postContainer"></div>
             </div>
 
+            <!-- SHOP -->
             <div id="shop-page" style="display: none;">
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
-                    <h2 class="shop-black-subtitle">Dostępne Rangi</h2>
+                    <h2 style="text-align:center; margin-bottom:20px;">Dostępne Rangi</h2>
                     <div class="rank-list">
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Steve/80.png">
-                                <div class="rank-main-info"><h3>VIP</h3><div class="price">2 ZŁ</div><button class="buy-btn" onclick="openPaymentModal()">KUP</button></div>
+                                <div class="rank-main-info"><h3>VIP</h3><div class="price">2 ZŁ</div></div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP</button>
                             </div>
                         </div>
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Alex/80.png">
-                                <div class="rank-main-info"><h3>SVIP</h3><div class="price">5 ZŁ</div><button class="buy-btn" onclick="openPaymentModal()">KUP</button></div>
+                                <div class="rank-main-info"><h3>SVIP</h3><div class="price">5 ZŁ</div></div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP</button>
                             </div>
                         </div>
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Herobrine/80.png">
-                                <div class="rank-main-info"><h3>Sponsor</h3><div class="price">7 ZŁ</div><button class="buy-btn" onclick="openPaymentModal()">KUP</button></div>
-                            </div>
-                        </div>
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <img src="https://minotar.net/helm/Dream/80.png">
-                                <div class="rank-main-info"><h3>Elita</h3><div class="price">10 ZŁ</div><button class="buy-btn" onclick="openPaymentModal()">KUP</button></div>
-                            </div>
-                        </div>
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <img src="https://minotar.net/helm/Technoblade/80.png">
-                                <div class="rank-main-info"><h3>XeloxFan</h3><div class="price">20 ZŁ</div><button class="buy-btn" onclick="openPaymentModal()">KUP</button></div>
+                                <div class="rank-main-info"><h3>Sponsor</h3><div class="price">7 ZŁ</div></div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP</button>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
 
+            <!-- RULES -->
             <div id="rules-page" style="display: none;">
                 <h1 class="big-white-title">Regulamin</h1>
                 <section class="card rules-box">
-                    <h2 style="color: #3498db; text-align: center;">💎 REGULAMIN SERWERA XELOXMC</h2>
-                    
                     <h3>I. Postanowienia Ogólne</h3>
                     <ul>
-                        <li>Wejście na serwer oznacza pełną akceptację regulaminu.</li>
-                        <li>Nieznajomość zasad nie zwalnia z odpowiedzialności za ich łamanie.</li>
-                        <li>XeloxMC to Safe Space – szanujemy każdego bez względu na pochodzenie czy poglądy.</li>
+                        <li>Wejście na serwer oznacza akceptację regulaminu.</li>
+                        <li>XeloxMC to miejsce przyjazne dla każdego gracza.</li>
                     </ul>
-
-                    <h3>II. Zasady Zachowania</h3>
+                    <h3>II. Zasady Rozgrywki</h3>
                     <ul>
-                        <li>Zakaz mowy nienawiści, rasizmu, homofobii oraz dyskryminacji.</li>
-                        <li>Całkowity zakaz udostępniania danych osobowych innych osób (Doxxing).</li>
-                        <li>Zakaz reklamowania innych serwerów Minecraft oraz stron zewnętrznych.</li>
-                        <li>Unikaj nadmiernego spamowania oraz pisania wielkimi literami (Caps Lock).</li>
-                    </ul>
-
-                    <h3>III. Rozgrywka</h3>
-                    <ul>
-                        <li>Surowy zakaz używania cheatów (X-Ray, KillAura, Fly itp.).</li>
-                        <li>Zakaz niszczenia budowli innych graczy (Griefing) na terenach chronionych.</li>
+                        <li>Zakaz używania wspomagaczy (cheatów).</li>
+                        <li>Zakaz niszczenia mienia innych graczy.</li>
+                        <li>Szanuj innych użytkowników na czacie.</li>
                     </ul>
                 </section>
             </div>
 
+            <!-- RATE -->
             <div id="rate-page" style="display: none;">
-                <h1 class="big-white-title">Oceń nasz serwer!</h1>
+                <h1 class="big-white-title">Oceny</h1>
                 <section class="card">
                     <div class="rating-form">
                         <div class="stars-input">
@@ -132,32 +114,33 @@
                             <input type="radio" name="star" id="s2" value="2"><label for="s2" class="fa fa-star"></label>
                             <input type="radio" name="star" id="s1" value="1"><label for="s1" class="fa fa-star"></label>
                         </div>
-                        <input type="text" id="rateNick" placeholder="Twój nick Minecraft...">
-                        <textarea id="rateText" placeholder="Co sądzisz o serwerze?"></textarea>
-                        <button class="buy-btn" onclick="submitRating()">Wyślij opinię</button>
+                        <input type="text" id="rateNick" placeholder="Twój nick...">
+                        <textarea id="rateText" placeholder="Twoja opinia..."></textarea>
+                        <button class="buy-btn" onclick="submitRating()">Wyślij</button>
                     </div>
-                    <hr>
                     <div id="reviews-list"></div>
                 </section>
             </div>
         </main>
     </div>
 
+    <!-- MODAL -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:black">Wybierz płatność</h2>
+            <h2 style="color:black">Wybierz metodę</h2>
             <div class="payment-buttons">
-                <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn paypal">PayPal</a>
-                <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn psc">PaySafeCard</a>
+                <a href="#" class="pay-btn paypal">PayPal</a>
+                <a href="#" class="pay-btn psc">PaySafeCard</a>
             </div>
         </div>
     </div>
 
     <script>
         function showPage(pageId) {
-            const pages = ['home', 'community', 'shop', 'rules', 'rate'];
-            pages.forEach(p => document.getElementById(p + '-page').style.display = 'none');
+            ['home', 'community', 'shop', 'rules', 'rate'].forEach(p => {
+                document.getElementById(p + '-page').style.display = 'none';
+            });
             document.getElementById(pageId + '-page').style.display = 'block';
         }
 
@@ -188,15 +171,9 @@
                     </div>
                     <div class="post-content">${post.text}</div>
                     <div class="post-footer">
-                        <button class="fb-btn" onclick="likePost(${post.id})"><i class="fa fa-thumbs-up"></i> <span id="likes-${post.id}">${post.likes}</span></button>
-                        <button class="fb-btn" onclick="toggleComments(${post.id})"><i class="fa fa-comment"></i> Komentuj</button>
-                    </div>
-                    <div class="comment-section" id="comments-${post.id}" style="display:none">
-                        <div id="list-${post.id}">${post.comments.map(c => `<div class="single-comment"><b>Gracz:</b> ${c}</div>`).join('')}</div>
-                        <div style="display:flex; gap:5px; margin-top:10px;">
-                            <input type="text" id="input-${post.id}" placeholder="Napisz..." style="flex:1; padding:5px;">
-                            <button class="buy-btn" style="width:auto; margin:0; padding:5px 10px;" onclick="addComment(${post.id})">OK</button>
-                        </div>
+                        <button class="fb-btn" onclick="likePost(${post.id})">
+                            <i class="fa fa-thumbs-up"></i> <span id="likes-${post.id}">${post.likes}</span>
+                        </button>
                     </div>
                 </div>`;
             const container = document.getElementById('postContainer');
@@ -205,31 +182,24 @@
         }
 
         function likePost(id) {
+            let liked = JSON.parse(localStorage.getItem('liked_posts')) || [];
+            if(liked.includes(id)) {
+                alert("Już polubiłeś ten post!");
+                return;
+            }
+            
             let posts = JSON.parse(localStorage.getItem('xelox_posts'));
             const post = posts.find(p => p.id === id);
             post.likes++;
+            liked.push(id);
+            
             localStorage.setItem('xelox_posts', JSON.stringify(posts));
+            localStorage.setItem('liked_posts', JSON.stringify(liked));
             document.getElementById(`likes-${id}`).innerText = post.likes;
         }
 
-        function toggleComments(id) {
-            const sec = document.getElementById(`comments-${id}`);
-            sec.style.display = sec.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function addComment(id) {
-            const input = document.getElementById(`input-${id}`);
-            if(!input.value) return;
-            let posts = JSON.parse(localStorage.getItem('xelox_posts'));
-            const post = posts.find(p => p.id === id);
-            post.comments.push(input.value);
-            localStorage.setItem('xelox_posts', JSON.stringify(posts));
-            document.getElementById(`list-${id}`).insertAdjacentHTML('beforeend', `<div class="single-comment"><b>Gracz:</b> ${input.value}</div>`);
-            input.value = "";
-        }
-
         function submitRating() {
-            const nick = document.getElementById('rateNick').value || "Gracz";
+            const nick = document.getElementById('rateNick').value || "Anonim";
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
             if(!text || !stars) return;
