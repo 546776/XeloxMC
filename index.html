@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>XeloxMC - Serwer Minecraft</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,22 +26,22 @@
         </nav>
 
         <main class="content">
-            <!-- HOME -->
+            <!-- STRONA GŁÓWNA -->
             <div id="home-page">
                 <section class="card" style="text-align: center;">
                     <h2>Adres IP Serwera</h2>
                     <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
-                    <p>Skopiuj i wklej w Minecraft!</p>
+                    <p style="color: #666;">Skopiuj i wklej w Minecraft!</p>
                     <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
                     <h2>Wersje</h2>
-                    <p class="versions">1.21 - 1.21.11</p>
+                    <p class="versions">1.21 - 1.21.1</p>
                 </section>
             </div>
 
             <!-- SPOŁECZNOŚĆ -->
             <div id="community-page" style="display: none;">
                 <h1 class="big-white-title">Społeczność</h1>
-                <div class="card post-creator">
+                <div class="card">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
                         <textarea id="postInput" placeholder="Napisz coś do społeczności..."></textarea>
@@ -58,39 +58,39 @@
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
                     <div class="rank-list">
-                        <div class="rank-item">
+                        <div class="rank-item" onclick="openPaymentModal('VIP')">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Steve/80.png">
+                                <img src="https://minotar.net/helm/Steve/60.png">
                                 <div class="rank-main-info"><h3>VIP</h3><div class="price">2.00 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal('VIP')">KUP TERAZ</button>
+                                <button class="buy-btn">KUP</button>
                             </div>
                         </div>
-                        <div class="rank-item">
+                        <div class="rank-item" onclick="openPaymentModal('SVIP')">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Alex/80.png">
+                                <img src="https://minotar.net/helm/Alex/60.png">
                                 <div class="rank-main-info"><h3>SVIP</h3><div class="price">5.00 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal('SVIP')">KUP TERAZ</button>
+                                <button class="buy-btn">KUP</button>
                             </div>
                         </div>
-                        <div class="rank-item">
+                        <div class="rank-item" onclick="openPaymentModal('Sponsor')">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Herobrine/80.png">
+                                <img src="https://minotar.net/helm/Herobrine/60.png">
                                 <div class="rank-main-info"><h3>Sponsor</h3><div class="price">7.00 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal('Sponsor')">KUP TERAZ</button>
+                                <button class="buy-btn">KUP</button>
                             </div>
                         </div>
-                        <div class="rank-item">
+                        <div class="rank-item" onclick="openPaymentModal('Elita')">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Notch/80.png">
+                                <img src="https://minotar.net/helm/Notch/60.png">
                                 <div class="rank-main-info"><h3>Elita</h3><div class="price">10.00 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal('Elita')">KUP TERAZ</button>
+                                <button class="buy-btn">KUP</button>
                             </div>
                         </div>
-                        <div class="rank-item">
+                        <div class="rank-item" onclick="openPaymentModal('Legendarny')">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/MHF_Golem/80.png">
+                                <img src="https://minotar.net/helm/MHF_Golem/60.png">
                                 <div class="rank-main-info"><h3>Legendarny</h3><div class="price">15.00 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal('Legendarny')">KUP TERAZ</button>
+                                <button class="buy-btn">KUP</button>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                 <section class="card rules-box">
                     <h3>I. Zasady Ogólne</h3>
                     <ul>
-                        <li>1. Nieznajomość regulaminu nie zwalnia z kar.</li>
+                        <li>1. Grając u nas, akceptujesz te zasady.</li>
                         <li>2. Zakaz używania cheatów i wspomagaczy.</li>
                         <li>3. Szanuj innych graczy i administrację.</li>
                     </ul>
@@ -132,15 +132,16 @@
         </main>
     </div>
 
-    <!-- MODAL -->
+    <!-- MODAL PŁATNOŚCI -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:#333; margin-bottom: 20px;">Zakup: <span id="currentRank">Ranga</span></h2>
+            <h2 style="color:#333;">Zakup: <span id="currentRank">Ranga</span></h2>
+            <p style="color: #666; margin-bottom: 20px;">Wybierz metodę płatności (DC):</p>
             <div class="payment-buttons">
                 <!-- TUTAJ WKLEJ SWÓJ LINK DO DISCORDA -->
-                <a href="https://discord.gg/TU_WKLEJ_LINK" target="_blank" class="pay-btn paypal">Płacę przez PayPal</a>
-                <a href="https://discord.gg/TU_WKLEJ_LINK" target="_blank" class="pay-btn psc">Płacę przez PaySafeCard</a>
+                <a href="https://discord.gg/TWOJ_KOD" target="_blank" class="pay-btn paypal">PayPal</a>
+                <a href="https://discord.gg/TWOJ_KOD" target="_blank" class="pay-btn psc">PaySafeCard</a>
             </div>
         </div>
     </div>
@@ -151,6 +152,7 @@
                 document.getElementById(p + '-page').style.display = 'none';
             });
             document.getElementById(pageId + '-page').style.display = 'block';
+            window.scrollTo(0,0);
         }
 
         function loadData() {
@@ -204,13 +206,14 @@
             const nick = document.getElementById('rateNick').value || "Anonim";
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
-            if(!text || !stars) return;
+            if(!text || !stars) { alert("Wybierz gwiazdki i wpisz tekst!"); return; }
             const newR = { stars: stars.value, nick: nick, text: text };
             const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
             reviews.unshift(newR);
             localStorage.setItem('xelox_reviews', JSON.stringify(reviews));
             renderReview(newR, true);
             document.getElementById('rateText').value = "";
+            document.getElementById('rateNick').value = "";
         }
 
         function renderReview(r, prepend = false) {
