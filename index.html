@@ -15,31 +15,60 @@
     </header>
 
     <div class="container">
-        <!-- MENU JAKO OSOBNE KAFELKI -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
-            <a href="#" class="menu-tile link-tile">Regulamin</a>
+            <!-- Zmieniamy linki na przyciski wywołujące funkcje -->
+            <a href="#" class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</a>
+            <a href="#" class="menu-tile link-tile" onclick="showPage('rules')">Regulamin</a>
             <a href="#" class="menu-tile link-tile">Sklep</a>
             <p class="join-text">Dołącz do nas!</p>
         </nav>
 
         <main class="content">
-            <section class="card">
-                <h2>Adres IP Serwera</h2>
-                <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
-                <p>Skopiuj i wklej w Minecraft!</p>
+            <!-- STRONA GŁÓWNA -->
+            <div id="home-page">
+                <section class="card">
+                    <h2>Adres IP Serwera</h2>
+                    <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
+                    <p>Skopiuj i wklej w Minecraft!</p>
+                    <hr>
+                    <h2>Wersje</h2>
+                    <p class="versions">1.21, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10, 1.21.11</p>
+                </section>
+            </div>
 
-                <hr>
-
-                <h2>Wersje</h2>
-                <p class="versions">1.21, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10, 1.21.11</p>
-            </section>
+            <!-- STRONA REGULAMINU -->
+            <div id="rules-page" style="display: none;">
+                <h1 class="big-title">Regulamin Serwera</h1>
+                <section class="card rules-box">
+                    <!-- Tu możesz wpisać swój regulamin w przyszłości -->
+                    <p>1. Nie czituj.</p>
+                    <p>2. Szanuj innych graczy.</p>
+                    <p>3. Baw się dobrze!</p>
+                </section>
+            </div>
         </main>
     </div>
 
     <footer class="footer-left">
         &copy; 2026 XeloxMC. Wszelkie prawa zastrzeżone.
     </footer>
+
+    <!-- PROSTY SKRYPT DO PRZEŁĄCZANIA STRON -->
+    <script>
+        function showPage(pageId) {
+            // Ukryj wszystko
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('rules-page').style.display = 'none';
+            
+            // Pokaż to co wybrano
+            if(pageId === 'home') {
+                document.getElementById('home-page').style.display = 'block';
+            } else if(pageId === 'rules') {
+                document.getElementById('rules-page').style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
