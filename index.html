@@ -10,11 +10,12 @@
 <body>
 
     <header>
-        <h1>XeloxMC</h1>
+        <h1>XELOXMC</h1>
         <p class="subtitle">!Najlepszy serwer w Polsce!</p>
     </header>
 
     <div class="container">
+        <!-- PASEK BOCZNY -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
@@ -23,8 +24,10 @@
             <p class="join-text">Dołącz do nas!</p>
         </nav>
 
+        <!-- TREŚĆ GŁÓWNA -->
         <main class="content">
-            <!-- STRONA GŁÓWNA -->
+            
+            <!-- ZAKŁADKA: STRONA GŁÓWNA -->
             <div id="home-page">
                 <section class="card">
                     <h2>Adres IP Serwera</h2>
@@ -32,64 +35,107 @@
                     <p>Skopiuj i wklej w Minecraft!</p>
                     <hr>
                     <h2>Wersje</h2>
-                    <p class="versions">1.21, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10, 1.21.11</p>
+                    <p class="versions">1.21 - 1.21.11</p>
                 </section>
             </div>
 
-            <!-- STRONA REGULAMINU -->
+            <!-- ZAKŁADKA: REGULAMIN -->
             <div id="rules-page" style="display: none;">
-                <h1 class="big-title">Regulamin Serwera</h1>
+                <h1 class="big-white-title">Regulamin Serwera</h1>
                 <section class="card rules-box">
-                    <p>1. Nie czituj.</p>
-                    <p>2. Szanuj administrację i graczy.</p>
-                    <p>3. Zakaz reklamowania innych serwerów.</p>
+                    <p>1. Nie używaj wspomagaczy (cheatów).</p>
+                    <p>2. Szanuj innych graczy oraz administrację.</p>
+                    <p>3. Zakaz reklamowania innych serwerów Minecraft.</p>
+                    <p>4. Każdy gracz zobowiązany jest do przestrzegania netykiety.</p>
                 </section>
             </div>
 
-            <!-- STRONA SKLEPU -->
+            <!-- ZAKŁADKA: SKLEP -->
             <div id="shop-page" style="display: none;">
-                <h1 class="shop-main-title">Sklep</h1>
-                <section class="card shop-container">
-                    <h2 class="shop-subtitle">Rangi</h2>
+                <h1 class="big-white-title">Sklep</h1>
+                <section class="card">
+                    <h2 class="shop-black-subtitle">Rangi</h2>
                     
-                    <div class="rank-grid">
+                    <div class="rank-list">
                         <!-- VIP -->
-                        <div class="rank-card">
-                            <div class="rank-img-placeholder">PHOTO</div>
-                            <h3>VIP</h3>
-                            <div class="price">2 ZŁ</div>
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image">PHOTO</div>
+                                <div class="rank-main-info">
+                                    <h3>VIP</h3>
+                                    <div class="price">2 ZŁ</div>
+                                    <button class="buy-btn">KUP</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc">
+                                <p>Podstawowa ranga premium. Zawiera: /fly na lobby, prefix VIP oraz zestaw narzędzi /kit vip.</p>
+                            </div>
                         </div>
 
                         <!-- SVIP -->
-                        <div class="rank-card">
-                            <div class="rank-img-placeholder">PHOTO</div>
-                            <h3>SVIP</h3>
-                            <div class="price">5 ZŁ</div>
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image">PHOTO</div>
+                                <div class="rank-main-info">
+                                    <h3>SVIP</h3>
+                                    <div class="price">5 ZŁ</div>
+                                    <button class="buy-btn">KUP</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc">
+                                <p>Lepsza ranga premium. Zawiera: /heal, /feed, kolorowe pisanie na czacie oraz zestaw /kit svip.</p>
+                            </div>
                         </div>
 
-                        <!-- Sponsor -->
-                        <div class="rank-card">
-                            <div class="rank-img-placeholder">PHOTO</div>
-                            <h3>Sponsor</h3>
-                            <div class="price">7 ZŁ</div>
+                        <!-- SPONSOR -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image">PHOTO</div>
+                                <div class="rank-main-info">
+                                    <h3>Sponsor</h3>
+                                    <div class="price">7 ZŁ</div>
+                                    <button class="buy-btn">KUP</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc">
+                                <p>Wsparcie serwera. Zawiera: Unikalny prefix, dostęp do /ec w dowolnym miejscu i zestaw /kit sponsor.</p>
+                            </div>
                         </div>
 
-                        <!-- Elita -->
-                        <div class="rank-card">
-                            <div class="rank-img-placeholder">PHOTO</div>
-                            <h3>Elita</h3>
-                            <div class="price">10 ZŁ</div>
+                        <!-- ELITA -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image">PHOTO</div>
+                                <div class="rank-main-info">
+                                    <h3>Elita</h3>
+                                    <div class="price">10 ZŁ</div>
+                                    <button class="buy-btn">KUP</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc">
+                                <p>Prestiżowa ranga. Zawiera: /fly na całym serwerze, dostęp do specjalnej strefy oraz /kit elita.</p>
+                            </div>
                         </div>
 
-                        <!-- XeloxFan -->
-                        <div class="rank-card">
-                            <div class="rank-img-placeholder">PHOTO</div>
-                            <h3>XeloxFan</h3>
-                            <div class="price">20 ZŁ</div>
+                        <!-- XELOXFAN -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image">PHOTO</div>
+                                <div class="rank-main-info">
+                                    <h3>XeloxFan</h3>
+                                    <div class="price">20 ZŁ</div>
+                                    <button class="buy-btn">KUP</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc">
+                                <p>Najwyższa ranga dla fanów! Zawiera: Wszystkie powyższe uprawnienia + unikalny efekt cząsteczek wokół gracza.</p>
+                            </div>
                         </div>
+
                     </div>
                 </section>
             </div>
+
         </main>
     </div>
 
@@ -99,12 +145,9 @@
 
     <script>
         function showPage(pageId) {
-            // Ukrywamy wszystkie strony
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('rules-page').style.display = 'none';
             document.getElementById('shop-page').style.display = 'none';
-            
-            // Pokazujemy wybraną stronę
             document.getElementById(pageId + '-page').style.display = 'block';
         }
     </script>
