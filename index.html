@@ -26,7 +26,7 @@
         </nav>
 
         <main class="content">
-            <!-- HOME -->
+            <!-- STRONA GŁÓWNA -->
             <div id="home-page">
                 <section class="card">
                     <h2>Adres IP Serwera</h2>
@@ -38,13 +38,13 @@
                 </section>
             </div>
 
-            <!-- COMMUNITY -->
+            <!-- SPOŁECZNOŚĆ -->
             <div id="community-page" style="display: none;">
                 <h1 class="big-white-title">Społeczność</h1>
                 <div class="fb-post">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
-                        <textarea id="postInput" placeholder="Napisz coś do społeczności..."></textarea>
+                        <textarea id="postInput" placeholder="Co u Ciebie słychać na XeloxMC?"></textarea>
                     </div>
                     <div style="text-align: right;">
                         <button class="buy-btn" style="width: auto; padding: 10px 30px;" onclick="addPost()">Opublikuj</button>
@@ -53,58 +53,68 @@
                 <div id="postContainer"></div>
             </div>
 
-            <!-- SHOP -->
+            <!-- SKLEP -->
             <div id="shop-page" style="display: none;">
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
                     <h2 style="text-align:center; margin-bottom:20px;">Dostępne Rangi</h2>
                     <div class="rank-list">
+                        <!-- Ranga VIP -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Steve/80.png">
                                 <div class="rank-main-info"><h3>VIP</h3><div class="price">2 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP</button>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP RANGĘ</button>
                             </div>
                         </div>
+                        <!-- Ranga SVIP -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Alex/80.png">
                                 <div class="rank-main-info"><h3>SVIP</h3><div class="price">5 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP</button>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP RANGĘ</button>
                             </div>
                         </div>
+                        <!-- Ranga SPONSOR -->
                         <div class="rank-item">
                             <div class="rank-header">
                                 <img src="https://minotar.net/helm/Herobrine/80.png">
-                                <div class="rank-main-info"><h3>Sponsor</h3><div class="price">7 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP</button>
+                                <div class="rank-main-info"><h3>SPONSOR</h3><div class="price">7 ZŁ</div></div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP RANGĘ</button>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- RULES -->
+            <!-- REGULAMIN - PEŁNY -->
             <div id="rules-page" style="display: none;">
-                <h1 class="big-white-title">Regulamin</h1>
+                <h1 class="big-white-title">Regulamin Serwera</h1>
                 <section class="card rules-box">
                     <h3>I. Postanowienia Ogólne</h3>
                     <ul>
-                        <li>Wejście na serwer oznacza akceptację regulaminu.</li>
-                        <li>XeloxMC to miejsce przyjazne dla każdego gracza.</li>
+                        <li>1. Nieznajomość regulaminu nie zwalnia z jego przestrzegania.</li>
+                        <li>2. Administracja ma prawo zmienić regulamin w dowolnym momencie.</li>
+                        <li>3. Wchodząc na serwer akceptujesz zasady panujące w społeczności XeloxMC.</li>
                     </ul>
-                    <h3>II. Zasady Rozgrywki</h3>
+                    <h3>II. Rozgrywka i Zachowanie</h3>
                     <ul>
-                        <li>Zakaz używania wspomagaczy (cheatów).</li>
-                        <li>Zakaz niszczenia mienia innych graczy.</li>
-                        <li>Szanuj innych użytkowników na czacie.</li>
+                        <li>1. Całkowity zakaz używania cheatów, skryptów i modyfikacji dających przewagę.</li>
+                        <li>2. Zakaz wykorzystywania błędów gry (bugów) – należy je zgłaszać administracji.</li>
+                        <li>3. Zakaz griefowania (niszczenia budowli innych graczy) na terenach chronionych.</li>
+                        <li>4. Zakaz obrażania, spamowania oraz reklamowania innych serwerów na czacie.</li>
+                    </ul>
+                    <h3>III. Zakupy i Reklamacje</h3>
+                    <ul>
+                        <li>1. Rangi zakupione w sklepie są przypisane do nicku gracza.</li>
+                        <li>2. Administracja nie zwraca kosztów w przypadku otrzymania bana za łamanie regulaminu.</li>
                     </ul>
                 </section>
             </div>
 
-            <!-- RATE -->
+            <!-- OCEŃ NAS -->
             <div id="rate-page" style="display: none;">
-                <h1 class="big-white-title">Oceny</h1>
+                <h1 class="big-white-title">Oceń nasz serwer!</h1>
                 <section class="card">
                     <div class="rating-form">
                         <div class="stars-input">
@@ -114,9 +124,9 @@
                             <input type="radio" name="star" id="s2" value="2"><label for="s2" class="fa fa-star"></label>
                             <input type="radio" name="star" id="s1" value="1"><label for="s1" class="fa fa-star"></label>
                         </div>
-                        <input type="text" id="rateNick" placeholder="Twój nick...">
-                        <textarea id="rateText" placeholder="Twoja opinia..."></textarea>
-                        <button class="buy-btn" onclick="submitRating()">Wyślij</button>
+                        <input type="text" id="rateNick" placeholder="Twój nick Minecraft...">
+                        <textarea id="rateText" placeholder="Co sądzisz o serwerze?"></textarea>
+                        <button class="buy-btn" onclick="submitRating()">Wyślij opinię</button>
                     </div>
                     <div id="reviews-list"></div>
                 </section>
@@ -128,10 +138,10 @@
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:black">Wybierz metodę</h2>
+            <h2 style="color:black">Wybierz płatność</h2>
             <div class="payment-buttons">
-                <a href="#" class="pay-btn paypal">PayPal</a>
-                <a href="#" class="pay-btn psc">PaySafeCard</a>
+                <a href="#" class="pay-btn paypal">Płatność PayPal</a>
+                <a href="#" class="pay-btn psc">Karta PaySafeCard</a>
             </div>
         </div>
     </div>
@@ -154,7 +164,7 @@
         function addPost() {
             const text = document.getElementById('postInput').value;
             if(!text) return;
-            const newPost = { id: Date.now(), text: text, likes: 0, comments: [] };
+            const newPost = { id: Date.now(), text: text, likes: 0 };
             const posts = JSON.parse(localStorage.getItem('xelox_posts')) || [];
             posts.unshift(newPost);
             localStorage.setItem('xelox_posts', JSON.stringify(posts));
@@ -167,12 +177,12 @@
                 <div class="fb-post" id="post-${post.id}">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png">
-                        <span class="post-author">Gracz Xelox</span>
+                        <span class="post-author">Gracz XeloxMC</span>
                     </div>
                     <div class="post-content">${post.text}</div>
                     <div class="post-footer">
                         <button class="fb-btn" onclick="likePost(${post.id})">
-                            <i class="fa fa-thumbs-up"></i> <span id="likes-${post.id}">${post.likes}</span>
+                            <i class="fa fa-thumbs-up"></i> Lubię to! (<span id="likes-${post.id}">${post.likes}</span>)
                         </button>
                     </div>
                 </div>`;
@@ -202,7 +212,8 @@
             const nick = document.getElementById('rateNick').value || "Anonim";
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
-            if(!text || !stars) return;
+            if(!text || !stars) { alert("Wybierz gwiazdki i napisz opinię!"); return; }
+            
             const newReview = { stars: stars.value, nick: nick, text: text };
             const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
             reviews.unshift(newReview);
