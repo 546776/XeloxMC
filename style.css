@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1c23; /* Ciemne tło */
+    background-color: #1a1c23;
     color: #fff;
     min-height: 100vh;
     position: relative;
@@ -18,9 +18,8 @@ header {
 }
 
 header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
-.subtitle { color: #3498db; font-weight: bold; font-size: 1.2rem; }
+.subtitle { color: #3498db; font-weight: bold; }
 
-/* --- UKŁAD I KONTENER --- */
 .container {
     display: flex;
     max-width: 1100px;
@@ -29,7 +28,7 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
     gap: 30px;
 }
 
-/* --- SIDEBAR (BIAŁE KAFELKI W PIONIE) --- */
+/* --- SIDEBAR --- */
 .sidebar {
     width: 250px;
     display: flex;
@@ -42,7 +41,7 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
     width: 100%;
     background: #ffffff;
     color: #333;
-    padding: 15px 20px;
+    padding: 15px;
     border-radius: 10px;
     border: none;
     text-align: left;
@@ -53,24 +52,11 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
     transition: 0.3s;
 }
 
-.title-tile {
-    background: #3498db;
-    color: white;
-    cursor: default;
-    border-left: 6px solid #2980b9;
-}
+.title-tile { background: #3498db; color: white; cursor: default; }
+.link-tile:hover { transform: translateX(10px); color: #3498db; }
 
-.link-tile:hover {
-    background: #f0f0f0;
-    transform: translateX(10px);
-    color: #3498db;
-}
-
-.join-text { color: #666; font-size: 0.8rem; padding-left: 10px; }
-
-/* --- KARTY TREŚCI --- */
+/* --- TREŚĆ I KARTY --- */
 .content { flex: 1; }
-
 .card {
     background: #ffffff;
     color: #333;
@@ -79,109 +65,88 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.big-white-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #fff;
-}
+.big-white-title { text-align: center; font-size: 2.5rem; color: #fff; margin-bottom: 20px; }
+.shop-black-subtitle { text-align: center; color: #000; margin-bottom: 30px; text-transform: uppercase; }
 
-.shop-black-subtitle {
-    text-align: center;
-    color: #000;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-}
-
-/* --- STYL SKLEPU (NOWY UKŁAD) --- */
-.rank-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
+/* --- SKLEP --- */
+.rank-list { display: flex; flex-direction: column; gap: 20px; }
 .rank-item {
     background: #fdfdfd;
-    border: 1px solid #eee;
     border-radius: 12px;
     padding: 20px;
     border-left: 6px solid #3498db;
+    border: 1px solid #eee;
 }
 
-.rank-header {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
+.rank-header { display: flex; gap: 20px; align-items: flex-start; }
 .rank-image {
-    width: 80px;
-    height: 80px;
-    background: #eee;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
-    font-weight: bold;
-    font-size: 0.7rem;
+    width: 80px; height: 80px; background: #eee;
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    color: #aaa; font-weight: bold; font-size: 0.7rem;
 }
 
-.rank-main-info h3 { margin: 0; font-size: 1.6rem; color: #000; }
-
-.price {
-    color: #27ae60;
-    font-weight: 700;
-    font-size: 1.3rem;
-    margin: 5px 0;
-}
-
+.price { color: #27ae60; font-weight: 700; font-size: 1.3rem; margin: 5px 0; }
 .buy-btn {
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
+    background: #3498db; color: white; border: none;
+    padding: 10px 25px; border-radius: 5px; font-weight: bold;
+    cursor: pointer; transition: 0.2s;
 }
-
 .buy-btn:hover { background: #2980b9; }
+.rank-desc { border-top: 1px solid #eee; margin-top: 15px; padding-top: 15px; color: #666; font-size: 0.9rem; }
 
-.rank-desc {
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    color: #666;
-    font-size: 0.95rem;
+/* --- OKNO MODALNE --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center; align-items: center;
 }
 
-/* --- ELEMENTY DODATKOWE --- */
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%; max-width: 450px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute; right: 20px; top: 15px;
+    font-size: 28px; font-weight: bold; color: #aaa; cursor: pointer;
+}
+
+.payment-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
+
+.pay-btn {
+    padding: 15px; border-radius: 10px; text-decoration: none;
+    color: white; font-weight: bold; font-size: 1.1rem; transition: 0.3s;
+}
+
+.paypal { background-color: #003087; }
+.paypal:hover { background-color: #001c4f; }
+.psc { background-color: #009cde; }
+.psc:hover { background-color: #0078ab; }
+
+/* --- IP BOX I STOPKA --- */
 .ip-box {
-    background: #f9f9f9;
-    padding: 15px;
-    border: 2px dashed #3498db;
-    display: inline-block;
-    font-weight: bold;
-    color: #2980b9;
-    border-radius: 8px;
+    background: #f9f9f9; padding: 15px; border: 2px dashed #3498db;
+    display: inline-block; font-weight: bold; color: #2980b9; border-radius: 8px;
 }
 
 .versions { color: #27ae60; font-weight: bold; }
+.footer-left { position: fixed; bottom: 20px; left: 20px; font-size: 0.8rem; color: #444; }
 
-.footer-left {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    font-size: 0.8rem;
-    color: #444;
-}
-
-/* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
     .container { flex-direction: column; }
     .sidebar { width: 100%; }
     .rank-header { flex-direction: column; text-align: center; align-items: center; }
-    .footer-left { position: static; text-align: center; padding: 20px; }
 }

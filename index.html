@@ -15,7 +15,7 @@
     </header>
 
     <div class="container">
-        <!-- PASEK BOCZNY -->
+        <!-- MENU BOCZNE -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
@@ -27,7 +27,7 @@
         <!-- TREŚĆ GŁÓWNA -->
         <main class="content">
             
-            <!-- ZAKŁADKA: STRONA GŁÓWNA -->
+            <!-- STRONA GŁÓWNA -->
             <div id="home-page">
                 <section class="card">
                     <h2>Adres IP Serwera</h2>
@@ -39,18 +39,41 @@
                 </section>
             </div>
 
-            <!-- ZAKŁADKA: REGULAMIN -->
+            <!-- REGULAMIN -->
             <div id="rules-page" style="display: none;">
                 <h1 class="big-white-title">Regulamin Serwera</h1>
-                <section class="card rules-box">
-                    <p>1. Nie używaj wspomagaczy (cheatów).</p>
-                    <p>2. Szanuj innych graczy oraz administrację.</p>
-                    <p>3. Zakaz reklamowania innych serwerów Minecraft.</p>
-                    <p>4. Każdy gracz zobowiązany jest do przestrzegania netykiety.</p>
+                <section class="card">
+                    <p>1. 💎 REGULAMIN SERWERA XELOXMC
+Miejsce stworzone dla graczy, gdzie liczy się dobra zabawa i wzajemny szacunek.
+I. Postanowienia Ogólne
+Zgoda na zasady: Wejście na serwer jest równoznaczne z pełną akceptacją niniejszego regulaminu.
+Świadomość: Nieznajomość regulaminu nie zwalnia z odpowiedzialności za jego łamanie.
+Filozofia: XeloxMC to Safe Space – dbamy o to, by każdy czuł się tutaj bezpiecznie, swobodnie i bez obaw o dyskryminację.
+II. Zachowanie i Społeczność
+Szacunek ponad wszystko: Obowiązuje kategoryczny zakaz mowy nienawiści, homofobii, transfobii, rasizmu oraz wszelkich form dyskryminacji.
+Kultura osobista: Unikaj nadmiernego przeklinania, wyzywania innych graczy oraz spamowania. Tworzymy zgraną społeczność, nie toksyczne środowisko.
+Prywatność (Doxxing): Surowy zakaz udostępniania danych osobowych (swoich oraz innych graczy). Naruszenie tej zasady kończy się permanentnym banem.
+Reklama: Zakaz promowania innych serwerów Minecraft, stron czy kanałów bez zgody administracji.
+III. Mechanika i Rozgrywka
+Fair Play: Obowiązuje całkowity zakaz używania wspomagaczy (X-Ray, KillAura, Fly itp.). Gramy czysto i uczciwie!
+Ochrona mienia: Zakaz niszczenia budowli innych graczy (griefing) oraz okradania ich skrzyń (chyba że tryb serwera wyraźnie na to pozwala).
+Stabilność: Zakaz budowania maszyn mających na celu celowe lagowanie serwera (np. farmy niszczące wydajność chunków).
+Wizerunek: Nick oraz skin gracza nie mogą być ofensywne, erotyczne ani szerzyć nienawiści.
+IV. Administracja i Wsparcie
+Decyzyjność: Administracja ma ostateczne słowo w sprawach spornych.
+Współpraca: Zakaz okłamywania administracji oraz utrudniania pracy członkom ekipy.
+Zgłoszenia: Wszelkie skargi i błędy należy zgłaszać na dedykowanym kanale (np. Ticket na Discordzie).
+V. System Kar
+W zależności od skali przewinienia, administracja może zastosować:
+📢 Ostrzeżenie (Warn)
+🔇 Wyciszenie (Mute)
+👟 Wyrzucenie (Kick)
+🚫 Ban czasowy lub permanentny
+Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil na serwerze! ⚔️🛡️.</p>
                 </section>
             </div>
 
-            <!-- ZAKŁADKA: SKLEP -->
+            <!-- SKLEP -->
             <div id="shop-page" style="display: none;">
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
@@ -64,11 +87,11 @@
                                 <div class="rank-main-info">
                                     <h3>VIP</h3>
                                     <div class="price">2 ZŁ</div>
-                                    <button class="buy-btn">KUP</button>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
                             <div class="rank-desc">
-                                <p>Podstawowa ranga premium. Zawiera: /fly na lobby, prefix VIP oraz zestaw narzędzi /kit vip.</p>
+                                <p>Ranga VIP z dostępem do /fly na lobby i specjalnym prefixem.</p>
                             </div>
                         </div>
 
@@ -79,64 +102,40 @@
                                 <div class="rank-main-info">
                                     <h3>SVIP</h3>
                                     <div class="price">5 ZŁ</div>
-                                    <button class="buy-btn">KUP</button>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
                             <div class="rank-desc">
-                                <p>Lepsza ranga premium. Zawiera: /heal, /feed, kolorowe pisanie na czacie oraz zestaw /kit svip.</p>
+                                <p>Ranga SVIP z dostępem do /heal oraz kolorowym pisaniem na czacie.</p>
                             </div>
                         </div>
 
-                        <!-- SPONSOR -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">PHOTO</div>
-                                <div class="rank-main-info">
-                                    <h3>Sponsor</h3>
-                                    <div class="price">7 ZŁ</div>
-                                    <button class="buy-btn">KUP</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Wsparcie serwera. Zawiera: Unikalny prefix, dostęp do /ec w dowolnym miejscu i zestaw /kit sponsor.</p>
-                            </div>
-                        </div>
-
-                        <!-- ELITA -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">PHOTO</div>
-                                <div class="rank-main-info">
-                                    <h3>Elita</h3>
-                                    <div class="price">10 ZŁ</div>
-                                    <button class="buy-btn">KUP</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Prestiżowa ranga. Zawiera: /fly na całym serwerze, dostęp do specjalnej strefy oraz /kit elita.</p>
-                            </div>
-                        </div>
-
-                        <!-- XELOXFAN -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">PHOTO</div>
-                                <div class="rank-main-info">
-                                    <h3>XeloxFan</h3>
-                                    <div class="price">20 ZŁ</div>
-                                    <button class="buy-btn">KUP</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Najwyższa ranga dla fanów! Zawiera: Wszystkie powyższe uprawnienia + unikalny efekt cząsteczek wokół gracza.</p>
-                            </div>
-                        </div>
-
+                        <!-- Możesz dodać więcej rang kopiując blok rank-item -->
                     </div>
                 </section>
             </div>
-
         </main>
+    </div>
+
+    <!-- OKNO MODALNE PŁATNOŚCI -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePaymentModal()">&times;</span>
+            <h2 style="color: #000; margin-bottom: 10px;">Metody płatności</h2>
+            <div class="payment-buttons">
+                <!-- PRZYCISK PAYPAL -->
+                <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn paypal">
+                    PayPal
+                </a>
+                <!-- PRZYCISK PSC -->
+                <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn psc">
+                    PaySafeCard
+                </a>
+            </div>
+            <p style="color: #666; margin-top: 20px; font-size: 0.85rem;">
+                Po wyborze metody zostaniesz przeniesiony na nasz serwer Discord, aby sfinalizować zakup u administracji.
+            </p>
+        </div>
     </div>
 
     <footer class="footer-left">
@@ -150,7 +149,22 @@
             document.getElementById('shop-page').style.display = 'none';
             document.getElementById(pageId + '-page').style.display = 'block';
         }
-    </script>
 
+        function openPaymentModal() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
+                    
