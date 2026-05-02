@@ -63,12 +63,13 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
 
 .big-white-title { text-align: center; font-size: 2.5rem; color: #fff; margin-bottom: 20px; }
 .shop-black-subtitle { text-align: center; color: #000; margin-bottom: 30px; text-transform: uppercase; }
 
-/* --- SKLEP --- */
+/* --- SKLEP I OBRAZKI --- */
 .rank-list { display: flex; flex-direction: column; gap: 20px; }
 .rank-item {
     background: #fdfdfd;
@@ -79,19 +80,33 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
 }
 
 .rank-header { display: flex; gap: 20px; align-items: flex-start; }
+
 .rank-image {
-    width: 80px; height: 80px; background: #eee;
-    border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    color: #aaa; font-weight: bold; font-size: 0.7rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
 
+.rank-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.rank-main-info h3 { margin: 0; font-size: 1.6rem; color: #000; }
 .price { color: #27ae60; font-weight: 700; font-size: 1.3rem; margin: 5px 0; }
+
 .buy-btn {
     background: #3498db; color: white; border: none;
     padding: 10px 25px; border-radius: 5px; font-weight: bold;
     cursor: pointer; transition: 0.2s;
 }
 .buy-btn:hover { background: #2980b9; }
+
 .rank-desc { border-top: 1px solid #eee; margin-top: 15px; padding-top: 15px; color: #666; font-size: 0.9rem; }
 
 /* --- OKNO MODALNE --- */
@@ -129,6 +144,7 @@ header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 4px; }
 .pay-btn {
     padding: 15px; border-radius: 10px; text-decoration: none;
     color: white; font-weight: bold; font-size: 1.1rem; transition: 0.3s;
+    text-align: center;
 }
 
 .paypal { background-color: #003087; }
