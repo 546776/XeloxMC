@@ -16,7 +16,6 @@
     </header>
 
     <div class="container">
-        <!-- NAWIGACJA -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
@@ -27,36 +26,33 @@
         </nav>
 
         <main class="content">
-            <!-- HOME -->
             <div id="home-page">
                 <section class="card" style="text-align: center;">
                     <h2>Adres IP Serwera</h2>
                     <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
                     <p>Skopiuj i wklej w Minecraft!</p>
                     <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
-                    <h2>Dostępne Wersje</h2>
+                    <h2>Wersje</h2>
                     <p class="versions">1.21 - 1.21.11</p>
                 </section>
             </div>
 
-            <!-- SPOŁECZNOŚĆ -->
             <div id="community-page" style="display: none;">
                 <h1 class="big-white-title">Społeczność</h1>
                 <div class="fb-post">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
-                        <textarea id="postInput" placeholder="Napisz coś do społeczności XeloxMC..."></textarea>
+                        <textarea id="postInput" placeholder="Napisz coś do społeczności..."></textarea>
                     </div>
                     <div style="text-align: right;">
-                        <button class="buy-btn" style="width: auto; padding: 10px 30px;" onclick="addPost()">Opublikuj</button>
+                        <button class="buy-btn" onclick="addPost()">Opublikuj</button>
                     </div>
                 </div>
                 <div id="postContainer"></div>
             </div>
 
-            <!-- SKLEP (5 PEŁNYCH RANG) -->
             <div id="shop-page" style="display: none;">
-                <h1 class="big-white-title">Sklep Serwerowy</h1>
+                <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
                     <div class="rank-list">
                         <div class="rank-item">
@@ -98,35 +94,20 @@
                 </section>
             </div>
 
-            <!-- REGULAMIN (PEŁNY) -->
             <div id="rules-page" style="display: none;">
-                <h1 class="big-white-title">Regulamin Serwera</h1>
+                <h1 class="big-white-title">Regulamin</h1>
                 <section class="card rules-box">
-                    <h3>I. Postanowienia Ogólne</h3>
+                    <h3>I. Zasady Ogólne</h3>
                     <ul>
-                        <li>1. Nieznajomość regulaminu nie zwalnia z jego przestrzegania.</li>
-                        <li>2. Administracja ma prawo do zmiany regulaminu bez uprzedzenia.</li>
-                        <li>3. Każdy gracz zobowiązany jest do godnego reprezentowania serwera.</li>
-                    </ul>
-                    <h3>II. Zasady Rozgrywki</h3>
-                    <ul>
-                        <li>1. Zakaz używania cheatów (X-Ray, Killaura, Fly itp.).</li>
-                        <li>2. Zakaz wykorzystywania błędów gry - należy je zgłaszać.</li>
-                        <li>3. Zakaz griefowania i niszczenia cudzych budowli.</li>
-                        <li>4. Zakaz reklamowania innych serwerów oraz stron WWW.</li>
-                    </ul>
-                    <h3>III. Kultura i Zachowanie</h3>
-                    <ul>
-                        <li>1. Zakaz obrażania innych graczy oraz administracji.</li>
-                        <li>2. Czat służy do komunikacji, zakaz spamu i nadmiernego Caps Locka.</li>
-                        <li>3. Zabrania się szerzenia mowy nienawiści.</li>
+                        <li>1. Nieznajomość regulaminu nie zwalnia z kar.</li>
+                        <li>2. Zakaz używania cheatów i wspomagaczy.</li>
+                        <li>3. Szanuj innych graczy.</li>
                     </ul>
                 </section>
             </div>
 
-            <!-- OCEŃ NAS -->
             <div id="rate-page" style="display: none;">
-                <h1 class="big-white-title">Oceń nasz serwer!</h1>
+                <h1 class="big-white-title">Oceń serwer</h1>
                 <section class="card">
                     <div class="rating-form">
                         <div class="stars-input">
@@ -137,8 +118,8 @@
                             <input type="radio" name="star" id="s1" value="1"><label for="s1" class="fa fa-star"></label>
                         </div>
                         <input type="text" id="rateNick" placeholder="Twój nick Minecraft...">
-                        <textarea id="rateText" placeholder="Twoja opinia..."></textarea>
-                        <button class="buy-btn" onclick="submitRating()">Wyślij opinię</button>
+                        <textarea id="rateText" placeholder="Co sądzisz o serwerze?"></textarea>
+                        <button class="buy-btn" style="width: 100%;" onclick="submitRating()">Wyślij opinię</button>
                     </div>
                     <div id="reviews-list"></div>
                 </section>
@@ -146,14 +127,14 @@
         </main>
     </div>
 
-    <!-- MODAL PŁATNOŚCI -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:#333">Zakup: <span id="selectedRank">Ranga</span></h2>
+            <h2 style="color:#333; margin-bottom: 20px;">Zakup: <span id="currentRank">Ranga</span></h2>
             <div class="payment-buttons">
-                <a href="javascript:void(0)" class="pay-btn paypal" onclick="confirmPay('PayPal')">Płacę przez PayPal</a>
-                <a href="javascript:void(0)" class="pay-btn psc" onclick="confirmPay('PaySafeCard')">Płacę przez PaySafeCard</a>
+                <!-- TUTAJ WKLEJ SWÓJ LINK DO DISCORDA -->
+                <a href="https://discord.gg/TWÓJ_KOD" target="_blank" class="pay-btn paypal">Płacę przez PayPal</a>
+                <a href="https://discord.gg/TWÓJ_KOD" target="_blank" class="pay-btn psc">Płacę przez PaySafeCard</a>
             </div>
         </div>
     </div>
@@ -164,7 +145,6 @@
                 document.getElementById(p + '-page').style.display = 'none';
             });
             document.getElementById(pageId + '-page').style.display = 'block';
-            window.scrollTo(0,0);
         }
 
         function loadData() {
@@ -186,58 +166,53 @@
         }
 
         function renderPost(post, prepend = false) {
-            const html = `
-                <div class="fb-post">
-                    <div class="post-header">
-                        <img src="https://minotar.net/avatar/Steve/40.png">
-                        <strong>Gracz XeloxMC</strong>
-                    </div>
-                    <div class="post-content">${post.text}</div>
-                    <button class="fb-btn" onclick="likePost(${post.id})">
-                        <i class="fa fa-thumbs-up"></i> (<span id="likes-${post.id}">${post.likes}</span>)
-                    </button>
-                </div>`;
+            const html = `<div class="fb-post">
+                <div class="post-header"><img src="https://minotar.net/avatar/Steve/40.png"><strong>Gracz Xelox</strong></div>
+                <div class="post-content">${post.text}</div>
+                <button class="fb-btn" onclick="likePost(${post.id})"><i class="fa fa-thumbs-up"></i> (<span id="l-${post.id}">${post.likes}</span>)</button>
+            </div>`;
             const container = document.getElementById('postContainer');
             if(prepend) container.insertAdjacentHTML('afterbegin', html);
             else container.insertAdjacentHTML('beforeend', html);
         }
 
         function likePost(id) {
-            let liked = JSON.parse(localStorage.getItem('user_liked_posts')) || [];
-            if(liked.includes(id)) { alert("Już to lubisz!"); return; }
+            let liked = JSON.parse(localStorage.getItem('user_liked')) || [];
+            if(liked.includes(id)) { alert("Już polubiłeś ten post!"); return; }
             let posts = JSON.parse(localStorage.getItem('xelox_posts'));
             const post = posts.find(p => p.id === id);
             post.likes++;
             liked.push(id);
             localStorage.setItem('xelox_posts', JSON.stringify(posts));
-            localStorage.setItem('user_liked_posts', JSON.stringify(liked));
-            document.getElementById(`likes-${id}`).innerText = post.likes;
+            localStorage.setItem('user_liked', JSON.stringify(liked));
+            document.getElementById('l-'+id).innerText = post.likes;
         }
 
         function submitRating() {
             const nick = document.getElementById('rateNick').value || "Anonim";
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
-            if(!text || !stars) return;
-            const nr = { stars: stars.value, nick: nick, text: text };
-            const rs = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
-            rs.unshift(nr);
-            localStorage.setItem('xelox_reviews', JSON.stringify(rs));
-            renderReview(nr, true);
+            if(!text || !stars) { alert("Wybierz gwiazdki i wpisz tekst!"); return; }
+            const newR = { stars: stars.value, nick: nick, text: text };
+            const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
+            reviews.unshift(newR);
+            localStorage.setItem('xelox_reviews', JSON.stringify(reviews));
+            renderReview(newR, true);
+            document.getElementById('rateText').value = "";
         }
 
         function renderReview(r, prepend = false) {
             const html = `<div class="review"><strong>${"⭐".repeat(r.stars)} - ${r.nick}</strong><p>${r.text}</p></div>`;
-            if(prepend) document.getElementById('reviews-list').insertAdjacentHTML('afterbegin', html);
-            else document.getElementById('reviews-list').insertAdjacentHTML('beforeend', html);
+            const list = document.getElementById('reviews-list');
+            if(prepend) list.insertAdjacentHTML('afterbegin', html);
+            else list.insertAdjacentHTML('beforeend', html);
         }
 
-        function openPaymentModal(r) {
-            document.getElementById('selectedRank').innerText = r;
+        function openPaymentModal(rank) {
+            document.getElementById('currentRank').innerText = rank;
             document.getElementById('paymentModal').style.display = 'flex';
         }
         function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
-        function confirmPay(m) { alert("Przekierowanie do: " + m + " za rangę " + document.getElementById('selectedRank').innerText); }
     </script>
 </body>
 </html>

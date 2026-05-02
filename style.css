@@ -1,86 +1,66 @@
-/* --- RESET --- */
-* { box-sizing: border-box; }
-body { 
-    font-family: 'Poppins', sans-serif; 
-    margin: 0; 
-    background: #1a1c23; 
-    color: #fff; 
-    min-height: 100vh; 
-    font-size: 16px; 
-}
+* { box-sizing: border-box; outline: none; }
+body { font-family: 'Poppins', sans-serif; margin: 0; background: #1a1c23; color: #fff; overflow-x: hidden; }
 
-/* --- HEADER --- */
 header { background: #2c3e50; padding: 60px 20px; text-align: center; border-bottom: 4px solid #3498db; }
 header h1 { margin: 0; font-size: 3.5rem; letter-spacing: 5px; text-transform: uppercase; }
-.subtitle { color: #3498db; font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
+.subtitle { color: #3498db; font-weight: bold; }
 
-/* --- UKŁAD --- */
-.container { display: flex; max-width: 1250px; margin: 40px auto; padding: 0 20px; gap: 40px; align-items: flex-start; }
+.container { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; }
 
-/* --- SIDEBAR --- */
+/* MENU */
 .sidebar { width: 260px; flex-shrink: 0; display: flex; flex-direction: column; gap: 15px; }
 .menu-tile { 
-    background: #fff; 
-    color: #333; 
-    padding: 20px; 
-    border: none; 
-    border-radius: 12px; 
-    font-weight: 600; 
-    cursor: pointer; 
-    text-align: center; 
-    transition: 0.3s; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
-    width: 100%;
+    background: #fff; color: #333; padding: 18px; border: none; border-radius: 12px; 
+    font-weight: 600; cursor: pointer; text-align: center; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; 
 }
 .title-tile { background: #3498db; color: #fff; cursor: default; }
 .link-tile:hover { background: #3498db; color: #fff; transform: translateY(-3px); }
 
-/* --- MAIN CONTENT --- */
+/* CONTENT */
 .content { flex-grow: 1; min-width: 0; }
-.card { background: #fff; color: #333; padding: 40px; border-radius: 18px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); margin-bottom: 30px; }
+.card { background: #fff; color: #333; padding: 35px; border-radius: 18px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); margin-bottom: 30px; }
 .big-white-title { text-align: center; margin-bottom: 30px; font-size: 2.5rem; color: #fff; }
 
-/* --- SKLEP (RANGI) --- */
+/* FORMULARZ OCEN - POPRAWKA */
+.rating-form { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+.stars-input { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 2rem; gap: 10px; }
+.stars-input input { display: none; }
+.stars-input label { color: #ddd; cursor: pointer; transition: 0.2s; }
+.stars-input input:checked ~ label, .stars-input label:hover, .stars-input label:hover ~ label { color: #f1c40f; }
+
+.rating-form input, .rating-form textarea { 
+    width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #ccc; 
+    font-family: inherit; font-size: 1rem;
+}
+.rating-form textarea { height: 100px; resize: none; }
+
+/* SKLEP */
 .rank-list { display: flex; flex-direction: column; gap: 20px; }
-.rank-item { background: #fdfdfd; padding: 25px; border-radius: 15px; border-left: 8px solid #3498db; border-bottom: 1px solid #eee; }
+.rank-item { background: #fdfdfd; padding: 25px; border-radius: 15px; border-left: 8px solid #3498db; border-bottom: 1px solid #ddd; }
 .rank-header { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .rank-header img { width: 80px; height: 80px; }
 .rank-main-info { flex: 1; min-width: 150px; }
 .price { color: #27ae60; font-weight: 800; font-size: 1.6rem; }
 
-.buy-btn { background: #3498db; color: white; border: none; padding: 15px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 1rem; }
-.shop-btn { display: block; width: 100%; max-width: 250px; text-align: center; }
+.buy-btn { background: #3498db; color: white; border: none; padding: 15px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.shop-btn { display: block; width: 100%; max-width: 250px; text-align: center; text-decoration: none; }
 .buy-btn:hover { background: #2980b9; transform: scale(1.02); }
 
-/* --- SPOŁECZNOŚĆ --- */
+/* INNE */
+.ip-box { background: #f0f7ff; padding: 20px; border: 3px dashed #3498db; border-radius: 10px; font-weight: bold; color: #3498db; font-size: 1.5rem; display: inline-block; }
 .fb-post { background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-.post-header { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; color: #333; }
-.post-header img { border-radius: 50%; }
-.post-content { color: #333; margin-bottom: 15px; line-height: 1.5; }
-.fb-btn { background: none; border: none; color: #3498db; font-weight: bold; cursor: pointer; border-top: 1px solid #eee; width: 100%; text-align: left; padding: 10px 0; }
-#postInput { width: 100%; height: 70px; border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-family: inherit; resize: none; }
+.review { padding: 15px 0; border-bottom: 1px solid #eee; text-align: left; }
 
-/* --- REGULAMIN --- */
-.rules-box h3 { color: #2c3e50; border-bottom: 2px solid #3498db; display: inline-block; }
-.rules-box li { margin-bottom: 10px; color: #444; line-height: 1.6; }
-
-/* --- IP BOX --- */
-.ip-box { background: #f0f7ff; padding: 20px; border: 3px dashed #3498db; border-radius: 10px; font-weight: bold; color: #3498db; font-size: 1.5rem; display: inline-block; margin: 15px 0; }
-.versions { color: #27ae60; font-weight: bold; font-size: 1.4rem; }
-
-/* --- MODAL --- */
+/* MODAL */
 .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
 .modal-content { background: white; padding: 40px; border-radius: 20px; width: 380px; position: relative; text-align: center; }
-.close-modal { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; color: #666; }
-.pay-btn { display: block; padding: 15px; margin-top: 15px; border-radius: 10px; color: white; text-decoration: none; font-weight: bold; }
-.paypal { background: #003087; } .psc { background: #009cde; }
+.pay-btn { display: block; padding: 15px; margin-top: 15px; border-radius: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+.paypal { background: #001c3d; } .psc { background: #005c84; }
+.close-modal { position: absolute; right: 20px; top: 10px; font-size: 25px; cursor: pointer; color: #333; }
 
-/* --- MOBILE --- */
 @media (max-width: 850px) {
     .container { flex-direction: column; }
-    .sidebar { width: 100%; order: 1; }
-    .content { order: 2; width: 100%; }
+    .sidebar { width: 100%; }
     .shop-btn { max-width: 100%; }
-    header h1 { font-size: 2.2rem; }
-    .card { padding: 25px 15px; }
 }
