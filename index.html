@@ -6,6 +6,8 @@
     <title>XeloxMC - Serwer Minecraft</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Ikony do gwiazdek -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -19,8 +21,11 @@
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
-            <button class="menu-tile link-tile" onclick="showPage('rules')">Regulamin</button>
+            <button class="menu-tile link-tile" onclick="showPage('community')">Społeczność</button>
             <button class="menu-tile link-tile" onclick="showPage('shop')">Sklep</button>
+            <button class="menu-tile link-tile" onclick="showPage('rules')">Regulamin</button>
+            <button class="menu-tile link-tile" onclick="showPage('help')">Pomoc</button>
+            <button class="menu-tile link-tile" onclick="showPage('rate')">Oceń nas!</button>
             <p class="join-text">Dołącz do nas!</p>
         </nav>
 
@@ -39,11 +44,120 @@
                 </section>
             </div>
 
+            <!-- SPOŁECZNOŚĆ (STYLE FACEBOOK) -->
+            <div id="community-page" style="display: none;">
+                <h1 class="big-white-title">Społeczność</h1>
+                
+                <div class="fb-post">
+                    <div class="post-header">
+                        <img src="https://minotar.net/avatar/Admin/40.png" alt="Admin">
+                        <div>
+                            <span class="post-author">Admin_Xelox</span>
+                            <span class="post-date">Dzisiaj o 14:30</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Witajcie gracze! Właśnie dodaliśmy nową zakładkę Społeczność na naszej stronie. Jak Wam się podoba? Dajcie znać w zakładce "Oceń nas"! 🚀
+                    </div>
+                    <div class="post-footer">
+                        <button class="fb-btn"><i class="fa fa-thumbs-up"></i> Lubię to!</button>
+                        <button class="fb-btn"><i class="fa fa-comment"></i> Komentuj</button>
+                    </div>
+                </div>
+
+                <div class="fb-post">
+                    <div class="post-header">
+                        <img src="https://minotar.net/avatar/Gracz123/40.png" alt="Gracz">
+                        <div>
+                            <span class="post-author">Gracz_Marcin</span>
+                            <span class="post-date">Wczoraj o 19:15</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Mój nowy domek na spawnie skończony! Zapraszam wszystkich do odwiedzin. Serwer śmiga bez lagów! 🔥
+                    </div>
+                    <div class="post-footer">
+                        <button class="fb-btn"><i class="fa fa-thumbs-up"></i> Lubię to!</button>
+                        <button class="fb-btn"><i class="fa fa-comment"></i> Komentuj</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKLEP (5 RANG) -->
+            <div id="shop-page" style="display: none;">
+                <h1 class="big-white-title">Sklep</h1>
+                <section class="card">
+                    <h2 class="shop-black-subtitle">Rangi</h2>
+                    <div class="rank-list">
+                        <!-- VIP -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image"><img src="https://minotar.net/helm/Steve/80.png" alt="VIP"></div>
+                                <div class="rank-main-info">
+                                    <h3>VIP</h3>
+                                    <div class="price">2 ZŁ</div>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc"><p>Latanie na lobby, prefix VIP i /kit vip.</p></div>
+                        </div>
+                        <!-- SVIP -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image"><img src="https://minotar.net/helm/Alex/80.png" alt="SVIP"></div>
+                                <div class="rank-main-info">
+                                    <h3>SVIP</h3>
+                                    <div class="price">5 ZŁ</div>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc"><p>/heal, /feed i kolorowe pisanie.</p></div>
+                        </div>
+                        <!-- SPONSOR -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image"><img src="https://minotar.net/helm/Herobrine/80.png" alt="Sponsor"></div>
+                                <div class="rank-main-info">
+                                    <h3>Sponsor</h3>
+                                    <div class="price">7 ZŁ</div>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc"><p>Dostęp do /ec i unikalny prefix.</p></div>
+                        </div>
+                        <!-- ELITA -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image"><img src="https://minotar.net/helm/Dream/80.png" alt="Elita"></div>
+                                <div class="rank-main-info">
+                                    <h3>Elita</h3>
+                                    <div class="price">10 ZŁ</div>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc"><p>Latanie wszędzie i zestaw /kit elita.</p></div>
+                        </div>
+                        <!-- XELOXFAN -->
+                        <div class="rank-item">
+                            <div class="rank-header">
+                                <div class="rank-image"><img src="https://minotar.net/helm/Technoblade/80.png" alt="XeloxFan"></div>
+                                <div class="rank-main-info">
+                                    <h3>XeloxFan</h3>
+                                    <div class="price">20 ZŁ</div>
+                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
+                                </div>
+                            </div>
+                            <div class="rank-desc"><p>Najwyższa ranga + efekty wizualne!</p></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
             <!-- REGULAMIN -->
             <div id="rules-page" style="display: none;">
-                <h1 class="big-white-title">Regulamin Serwera</h1>
+                <h1 class="big-white-title">Regulamin</h1>
                 <section class="card">
-                    <p>1.  💎 REGULAMIN SERWERA XELOXMC
+                    <p>1. 💎 REGULAMIN SERWERA XELOXMC
 Miejsce stworzone dla graczy, gdzie liczy się dobra zabawa i wzajemny szacunek.
 I. Postanowienia Ogólne
 Zgoda na zasady: Wejście na serwer jest równoznaczne z pełną akceptacją niniejszego regulaminu.
@@ -69,148 +183,73 @@ W zależności od skali przewinienia, administracja może zastosować:
 🔇 Wyciszenie (Mute)
 👟 Wyrzucenie (Kick)
 🚫 Ban czasowy lub permanentny
-Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil na serwerze! ⚔️🛡️.</p>
+Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil na serwerze!.</p>
                 </section>
             </div>
 
-            <!-- SKLEP -->
-            <div id="shop-page" style="display: none;">
-                <h1 class="big-white-title">Sklep</h1>
+            <!-- POMOC -->
+            <div id="help-page" style="display: none;">
+                <h1 class="big-white-title">Pomoc</h1>
                 <section class="card">
-                    <h2 class="shop-black-subtitle">Rangi</h2>
-                    
-                    <div class="rank-list">
-                        <!-- VIP -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">
-                                    <img src="https://minotar.net/helm/Steve/80.png" alt="VIP">
-                                </div>
-                                <div class="rank-main-info">
-                                    <h3>VIP</h3>
-                                    <div class="price">2 ZŁ</div>
-                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Podstawowa ranga premium. Dostęp do /fly na lobby i specjalny prefix.</p>
-                            </div>
-                        </div>
+                    <h3>Najczęstsze Pytania (FAQ)</h3>
+                    <p><strong>Jak dołączyć?</strong> <br> Skopiuj IP ze strony głównej i dodaj je w Minecraft (wersja 1.21+).</p>
+                    <p><strong>Nie dostałem rangi, co robić?</strong> <br> Wejdź na nasz Discord i napisz do administratora w dziale pomoc.</p>
+                    <p><strong>Jak zgłosić cheatera?</strong> <br> Użyj komendy /report [nick] [powód] na serwerze.</p>
+                </section>
+            </div>
 
-                        <!-- SVIP -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">
-                                    <img src="https://minotar.net/helm/Alex/80.png" alt="SVIP">
-                                </div>
-                                <div class="rank-main-info">
-                                    <h3>SVIP</h3>
-                                    <div class="price">5 ZŁ</div>
-                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Ranga SVIP z dostępem do /heal oraz kolorowym pisaniem na czacie.</p>
-                            </div>
+            <!-- OCEŃ NAS -->
+            <div id="rate-page" style="display: none;">
+                <h1 class="big-white-title">Oceń nasz serwer!</h1>
+                <section class="card">
+                    <div class="rating-form">
+                        <h3>Zostaw opinię:</h3>
+                        <div class="stars">
+                            <input type="radio" name="star" id="star5"><label for="star5" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="star4"><label for="star4" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="star3"><label for="star3" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="star2"><label for="star2" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="star1"><label for="star1" class="fa fa-star"></label>
                         </div>
+                        <textarea placeholder="Napisz co sądzisz o XeloxMC..."></textarea>
+                        <button class="buy-btn" onclick="alert('Dziękujemy za opinię! (To tylko podgląd)')">Wyślij opinię</button>
+                    </div>
 
-                        <!-- SPONSOR -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">
-                                    <img src="https://minotar.net/helm/Herobrine/80.png" alt="Sponsor">
-                                </div>
-                                <div class="rank-main-info">
-                                    <h3>Sponsor</h3>
-                                    <div class="price">7 ZŁ</div>
-                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Wsparcie serwera. Unikalny prefix i dostęp do wirtualnego enderchesta /ec.</p>
-                            </div>
-                        </div>
-
-                        <!-- ELITA -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">
-                                    <img src="https://minotar.net/helm/Dream/80.png" alt="Elita">
-                                </div>
-                                <div class="rank-main-info">
-                                    <h3>Elita</h3>
-                                    <div class="price">10 ZŁ</div>
-                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Prestiżowa ranga. Dostęp do /fly na całym serwerze i zestaw /kit elita.</p>
-                            </div>
-                        </div>
-
-                        <!-- XELOXFAN -->
-                        <div class="rank-item">
-                            <div class="rank-header">
-                                <div class="rank-image">
-                                    <img src="https://minotar.net/helm/Technoblade/80.png" alt="XeloxFan">
-                                </div>
-                                <div class="rank-main-info">
-                                    <h3>XeloxFan</h3>
-                                    <div class="price">20 ZŁ</div>
-                                    <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
-                                </div>
-                            </div>
-                            <div class="rank-desc">
-                                <p>Najwyższa ranga dla fanów! Wszystkie przywileje + unikalne efekty wizualne.</p>
-                            </div>
-                        </div>
+                    <hr>
+                    <div class="review">
+                        <strong>⭐⭐⭐⭐⭐ - Jan Kowalski</strong>
+                        <p>Najlepszy serwer na jakim grałem, miła administracja!</p>
                     </div>
                 </section>
             </div>
+
         </main>
     </div>
 
-    <!-- OKNO MODALNE PŁATNOŚCI -->
+    <!-- OKNO PŁATNOŚCI -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color: #000; margin-bottom: 10px;">Metody płatności</h2>
+            <h2 style="color:#000">Metody płatności</h2>
             <div class="payment-buttons">
                 <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn paypal">PayPal</a>
                 <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn psc">PaySafeCard</a>
             </div>
-            <p style="color: #666; margin-top: 20px; font-size: 0.85rem;">
-                Po wyborze metody zostaniesz przeniesiony na nasz serwer Discord, aby sfinalizować zakup u administracji.
-            </p>
+            <p style="color:#666; font-size: 0.8rem; margin-top:15px;">Finalizacja na Discordzie.</p>
         </div>
     </div>
 
-    <footer class="footer-left">
-        &copy; 2026 XeloxMC. Wszelkie prawa zastrzeżone.
-    </footer>
+    <footer class="footer-left"> &copy; 2026 XeloxMC. </footer>
 
     <script>
         function showPage(pageId) {
-            document.getElementById('home-page').style.display = 'none';
-            document.getElementById('rules-page').style.display = 'none';
-            document.getElementById('shop-page').style.display = 'none';
+            const pages = ['home', 'community', 'shop', 'rules', 'help', 'rate'];
+            pages.forEach(p => document.getElementById(p + '-page').style.display = 'none');
             document.getElementById(pageId + '-page').style.display = 'block';
         }
 
-        function openPaymentModal() {
-            document.getElementById('paymentModal').style.display = 'flex';
-        }
-
-        function closePaymentModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            let modal = document.getElementById('paymentModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
+        function openPaymentModal() { document.getElementById('paymentModal').style.display = 'flex'; }
+        function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
     </script>
 </body>
 </html>
@@ -221,6 +260,11 @@ Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil n
 
 
 
+
+
+
+
+               
 
 
 
