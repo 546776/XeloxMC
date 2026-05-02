@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XeloxMC - Najlepszy serwer w Polsce</title>
+    <title>XeloxMC - Serwer Minecraft</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Dodajemy fajną czcionkę z Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,34 +15,29 @@
     </header>
 
     <div class="container">
-        <!-- PASEK BOCZNY (MENU) -->
+        <!-- MENU JAKO OSOBNE KAFELKI -->
         <nav class="sidebar">
-            <div class="menu-item active">Menu</div>
-            <a href="#" class="menu-link">Regulamin</a>
-            <a href="#" class="menu-link">Sklep</a>
-            <div class="sidebar-info">
-                <p>Dołącz do nas!</p>
-            </div>
+            <div class="menu-tile title-tile">Menu</div>
+            <a href="#" class="menu-tile link-tile">Regulamin</a>
+            <a href="#" class="menu-tile link-tile">Sklep</a>
+            <p class="join-text">Dołącz do nas!</p>
         </nav>
 
-        <!-- TREŚĆ GŁÓWNA -->
         <main class="content">
-            <!-- BOKS Z IP -->
-            <section class="card ip-card">
-                <h2>Adres IP Serwera</h2>
-                <div class="ip-address">wrecker-customers.gl.joinmc.link</div>
-                <p>Skopiuj i wklej w Minecraft!</p>
-            </section>
-
-            <!-- BOKS Z WERSJAMI -->
             <section class="card">
+                <h2>Adres IP Serwera</h2>
+                <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
+                <p>Skopiuj i wklej w Minecraft!</p>
+
+                <hr>
+
                 <h2>Wersje</h2>
-                <p class="versions-list">1.21, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10, 1.21.11</p>
+                <p class="versions">1.21, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10, 1.21.11</p>
             </section>
         </main>
     </div>
 
-    <footer>
+    <footer class="footer-left">
         &copy; 2026 XeloxMC. Wszelkie prawa zastrzeżone.
     </footer>
 
