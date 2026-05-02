@@ -16,6 +16,7 @@
     </header>
 
     <div class="container">
+        <!-- NAWIGACJA -->
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
@@ -29,12 +30,14 @@
             <!-- STRONA GŁÓWNA -->
             <div id="home-page">
                 <section class="card">
-                    <h2>Adres IP Serwera</h2>
-                    <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
-                    <p>Skopiuj i wklej w Minecraft!</p>
-                    <hr>
-                    <h2>Wersje</h2>
-                    <p class="versions">1.21 - 1.21.11</p>
+                    <h2 style="text-align: center;">Adres IP Serwera</h2>
+                    <div style="text-align: center;">
+                        <div class="ip-box">wrecker-customers.gl.joinmc.link</div>
+                        <p>Skopiuj i wklej w Minecraft!</p>
+                    </div>
+                    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+                    <h2 style="text-align: center;">Wersje</h2>
+                    <p class="versions" style="text-align: center;">1.21 - 1.21.11</p>
                 </section>
             </div>
 
@@ -44,7 +47,7 @@
                 <div class="fb-post">
                     <div class="post-header">
                         <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
-                        <textarea id="postInput" placeholder="Co u Ciebie słychać na XeloxMC?"></textarea>
+                        <textarea id="postInput" placeholder="Napisz coś do innych graczy..."></textarea>
                     </div>
                     <div style="text-align: right;">
                         <button class="buy-btn" style="width: auto; padding: 10px 30px;" onclick="addPost()">Opublikuj</button>
@@ -53,61 +56,73 @@
                 <div id="postContainer"></div>
             </div>
 
-            <!-- SKLEP -->
+            <!-- SKLEP (WSZYSTKIE RANGI) -->
             <div id="shop-page" style="display: none;">
-                <h1 class="big-white-title">Sklep</h1>
+                <h1 class="big-white-title">Sklep Serwerowy</h1>
                 <section class="card">
-                    <h2 style="text-align:center; margin-bottom:20px;">Dostępne Rangi</h2>
                     <div class="rank-list">
-                        <!-- Ranga VIP -->
+                        <!-- VIP -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Steve/80.png">
-                                <div class="rank-main-info"><h3>VIP</h3><div class="price">2 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP RANGĘ</button>
+                                <img src="https://minotar.net/helm/Steve/80.png" alt="VIP">
+                                <div class="rank-main-info">
+                                    <h3>Ranga VIP</h3>
+                                    <div class="price">2.00 ZŁ</div>
+                                    <p style="font-size: 0.9rem; color: #666; margin: 5px 0;">Dostęp do /fly, /heal oraz unikalny prefix.</p>
+                                </div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal('VIP')">KUP TERAZ</button>
                             </div>
                         </div>
-                        <!-- Ranga SVIP -->
+                        <!-- SVIP -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Alex/80.png">
-                                <div class="rank-main-info"><h3>SVIP</h3><div class="price">5 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP RANGĘ</button>
+                                <img src="https://minotar.net/helm/Alex/80.png" alt="SVIP">
+                                <div class="rank-main-info">
+                                    <h3>Ranga SVIP</h3>
+                                    <div class="price">5.00 ZŁ</div>
+                                    <p style="font-size: 0.9rem; color: #666; margin: 5px 0;">Wszystko co VIP + /feed, /ec i zestaw startowy SVIP.</p>
+                                </div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal('SVIP')">KUP TERAZ</button>
                             </div>
                         </div>
-                        <!-- Ranga SPONSOR -->
+                        <!-- SPONSOR -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/Herobrine/80.png">
-                                <div class="rank-main-info"><h3>SPONSOR</h3><div class="price">7 ZŁ</div></div>
-                                <button class="buy-btn shop-btn" onclick="openPaymentModal()">KUP RANGĘ</button>
+                                <img src="https://minotar.net/helm/Herobrine/80.png" alt="Sponsor">
+                                <div class="rank-main-info">
+                                    <h3>Ranga SPONSOR</h3>
+                                    <div class="price">7.00 ZŁ</div>
+                                    <p style="font-size: 0.9rem; color: #666; margin: 5px 0;">Najwyższa ranga! Dostęp do wszystkich komend i specjalny zestaw.</p>
+                                </div>
+                                <button class="buy-btn shop-btn" onclick="openPaymentModal('SPONSOR')">KUP TERAZ</button>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- REGULAMIN - PEŁNY -->
+            <!-- REGULAMIN (PEŁNY) -->
             <div id="rules-page" style="display: none;">
-                <h1 class="big-white-title">Regulamin Serwera</h1>
+                <h1 class="big-white-title">Regulamin</h1>
                 <section class="card rules-box">
                     <h3>I. Postanowienia Ogólne</h3>
                     <ul>
-                        <li>1. Nieznajomość regulaminu nie zwalnia z jego przestrzegania.</li>
-                        <li>2. Administracja ma prawo zmienić regulamin w dowolnym momencie.</li>
-                        <li>3. Wchodząc na serwer akceptujesz zasady panujące w społeczności XeloxMC.</li>
+                        <li>1. Nieznajomość regulaminu nie zwalnia gracza z jego przestrzegania.</li>
+                        <li>2. Administracja zastrzega sobie prawo do zmiany regulaminu.</li>
+                        <li>3. Gra na serwerze XeloxMC jest równoznaczna z akceptacją poniższych zasad.</li>
                     </ul>
-                    <h3>II. Rozgrywka i Zachowanie</h3>
+                    <h3>II. Rozgrywka</h3>
                     <ul>
-                        <li>1. Całkowity zakaz używania cheatów, skryptów i modyfikacji dających przewagę.</li>
-                        <li>2. Zakaz wykorzystywania błędów gry (bugów) – należy je zgłaszać administracji.</li>
-                        <li>3. Zakaz griefowania (niszczenia budowli innych graczy) na terenach chronionych.</li>
-                        <li>4. Zakaz obrażania, spamowania oraz reklamowania innych serwerów na czacie.</li>
+                        <li>1. Zakaz używania wszelkich cheatów, skryptów i modyfikacji wspomagających (np. X-Ray, Killaura).</li>
+                        <li>2. Zakaz wykorzystywania błędów gry. Każdy błąd należy niezwłocznie zgłosić.</li>
+                        <li>3. Zakaz griefowania budowli innych graczy oraz okradania ich (jeśli nie jest to tryb Anarchy).</li>
+                        <li>4. Zakaz celowego obciążania serwera (np. budowanie wielkich lag-maszyn).</li>
                     </ul>
-                    <h3>III. Zakupy i Reklamacje</h3>
+                    <h3>III. Kultura i Czat</h3>
                     <ul>
-                        <li>1. Rangi zakupione w sklepie są przypisane do nicku gracza.</li>
-                        <li>2. Administracja nie zwraca kosztów w przypadku otrzymania bana za łamanie regulaminu.</li>
+                        <li>1. Zakaz obrażania graczy oraz członków administracji.</li>
+                        <li>2. Zakaz spamowania, pisania dużymi literami (CAPS) oraz reklamowania innych serwerów.</li>
+                        <li>3. Zakaz szerzenia nienawiści, rasizmu oraz treści pornograficznych.</li>
                     </ul>
                 </section>
             </div>
@@ -134,14 +149,16 @@
         </main>
     </div>
 
-    <!-- MODAL -->
+    <!-- MODAL PŁATNOŚCI -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:black">Wybierz płatność</h2>
+            <h2 style="color:#333">Zakup: <span id="selectedRankName">Ranga</span></h2>
+            <p style="color: #666; margin-bottom: 20px;">Wybierz preferowaną metodę płatności:</p>
             <div class="payment-buttons">
-                <a href="#" class="pay-btn paypal">Płatność PayPal</a>
-                <a href="#" class="pay-btn psc">Karta PaySafeCard</a>
+                <!-- Po kliknięciu wywołuje funkcję alert, możesz tu wstawić linki href="twoja-strona.pl" -->
+                <a href="javascript:void(0)" class="pay-btn paypal" onclick="processPayment('PayPal')">Płacę przez PayPal</a>
+                <a href="javascript:void(0)" class="pay-btn psc" onclick="processPayment('PaySafeCard')">Płacę przez PaySafeCard</a>
             </div>
         </div>
     </div>
@@ -152,6 +169,7 @@
                 document.getElementById(p + '-page').style.display = 'none';
             });
             document.getElementById(pageId + '-page').style.display = 'block';
+            window.scrollTo(0,0);
         }
 
         function loadData() {
@@ -159,6 +177,24 @@
             const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
             posts.forEach(p => renderPost(p));
             reviews.forEach(r => renderReview(r));
+        }
+
+        // --- LUBIĘ TO (Jeden na użytkownika) ---
+        function likePost(id) {
+            let liked = JSON.parse(localStorage.getItem('user_likes')) || [];
+            if(liked.includes(id)) {
+                alert("Już polubiłeś ten wpis!");
+                return;
+            }
+            
+            let posts = JSON.parse(localStorage.getItem('xelox_posts'));
+            const post = posts.find(p => p.id === id);
+            post.likes++;
+            liked.push(id);
+            
+            localStorage.setItem('xelox_posts', JSON.stringify(posts));
+            localStorage.setItem('user_likes', JSON.stringify(liked));
+            document.getElementById(`likes-${id}`).innerText = post.likes;
         }
 
         function addPost() {
@@ -182,7 +218,7 @@
                     <div class="post-content">${post.text}</div>
                     <div class="post-footer">
                         <button class="fb-btn" onclick="likePost(${post.id})">
-                            <i class="fa fa-thumbs-up"></i> Lubię to! (<span id="likes-${post.id}">${post.likes}</span>)
+                            <i class="fa fa-thumbs-up"></i> Super! (<span id="likes-${post.id}">${post.likes}</span>)
                         </button>
                     </div>
                 </div>`;
@@ -191,28 +227,11 @@
             else container.insertAdjacentHTML('beforeend', html);
         }
 
-        function likePost(id) {
-            let liked = JSON.parse(localStorage.getItem('liked_posts')) || [];
-            if(liked.includes(id)) {
-                alert("Już polubiłeś ten post!");
-                return;
-            }
-            
-            let posts = JSON.parse(localStorage.getItem('xelox_posts'));
-            const post = posts.find(p => p.id === id);
-            post.likes++;
-            liked.push(id);
-            
-            localStorage.setItem('xelox_posts', JSON.stringify(posts));
-            localStorage.setItem('liked_posts', JSON.stringify(liked));
-            document.getElementById(`likes-${id}`).innerText = post.likes;
-        }
-
         function submitRating() {
             const nick = document.getElementById('rateNick').value || "Anonim";
             const text = document.getElementById('rateText').value;
             const stars = document.querySelector('input[name="star"]:checked');
-            if(!text || !stars) { alert("Wybierz gwiazdki i napisz opinię!"); return; }
+            if(!text || !stars) { alert("Uzupełnij wszystkie pola oceny!"); return; }
             
             const newReview = { stars: stars.value, nick: nick, text: text };
             const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
@@ -230,8 +249,17 @@
             else container.insertAdjacentHTML('beforeend', html);
         }
 
-        function openPaymentModal() { document.getElementById('paymentModal').style.display='flex'; }
+        // --- OBSŁUGA PŁATNOŚCI ---
+        function openPaymentModal(rankName) { 
+            document.getElementById('selectedRankName').innerText = rankName;
+            document.getElementById('paymentModal').style.display='flex'; 
+        }
         function closePaymentModal() { document.getElementById('paymentModal').style.display='none'; }
+        function processPayment(method) {
+            const rank = document.getElementById('selectedRankName').innerText;
+            alert("Trwa przekierowanie do płatności " + method + " za rangę " + rank + "...");
+            // Tu możesz wstawić: window.location.href = "twoj_link_do_platnosci.pl";
+        }
     </script>
 </body>
 </html>
