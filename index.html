@@ -17,10 +17,9 @@
     <div class="container">
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
-            <!-- Zmieniamy linki na przyciski wywołujące funkcje -->
-            <a href="#" class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</a>
-            <a href="#" class="menu-tile link-tile" onclick="showPage('rules')">Regulamin</a>
-            <a href="#" class="menu-tile link-tile">Sklep</a>
+            <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
+            <button class="menu-tile link-tile" onclick="showPage('rules')">Regulamin</button>
+            <button class="menu-tile link-tile" onclick="showPage('shop')">Sklep</button>
             <p class="join-text">Dołącz do nas!</p>
         </nav>
 
@@ -41,10 +40,54 @@
             <div id="rules-page" style="display: none;">
                 <h1 class="big-title">Regulamin Serwera</h1>
                 <section class="card rules-box">
-                    <!-- Tu możesz wpisać swój regulamin w przyszłości -->
                     <p>1. Nie czituj.</p>
-                    <p>2. Szanuj innych graczy.</p>
-                    <p>3. Baw się dobrze!</p>
+                    <p>2. Szanuj administrację i graczy.</p>
+                    <p>3. Zakaz reklamowania innych serwerów.</p>
+                </section>
+            </div>
+
+            <!-- STRONA SKLEPU -->
+            <div id="shop-page" style="display: none;">
+                <h1 class="shop-main-title">Sklep</h1>
+                <section class="card shop-container">
+                    <h2 class="shop-subtitle">Rangi</h2>
+                    
+                    <div class="rank-grid">
+                        <!-- VIP -->
+                        <div class="rank-card">
+                            <div class="rank-img-placeholder">PHOTO</div>
+                            <h3>VIP</h3>
+                            <div class="price">2 ZŁ</div>
+                        </div>
+
+                        <!-- SVIP -->
+                        <div class="rank-card">
+                            <div class="rank-img-placeholder">PHOTO</div>
+                            <h3>SVIP</h3>
+                            <div class="price">5 ZŁ</div>
+                        </div>
+
+                        <!-- Sponsor -->
+                        <div class="rank-card">
+                            <div class="rank-img-placeholder">PHOTO</div>
+                            <h3>Sponsor</h3>
+                            <div class="price">7 ZŁ</div>
+                        </div>
+
+                        <!-- Elita -->
+                        <div class="rank-card">
+                            <div class="rank-img-placeholder">PHOTO</div>
+                            <h3>Elita</h3>
+                            <div class="price">10 ZŁ</div>
+                        </div>
+
+                        <!-- XeloxFan -->
+                        <div class="rank-card">
+                            <div class="rank-img-placeholder">PHOTO</div>
+                            <h3>XeloxFan</h3>
+                            <div class="price">20 ZŁ</div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>
@@ -54,19 +97,15 @@
         &copy; 2026 XeloxMC. Wszelkie prawa zastrzeżone.
     </footer>
 
-    <!-- PROSTY SKRYPT DO PRZEŁĄCZANIA STRON -->
     <script>
         function showPage(pageId) {
-            // Ukryj wszystko
+            // Ukrywamy wszystkie strony
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('rules-page').style.display = 'none';
+            document.getElementById('shop-page').style.display = 'none';
             
-            // Pokaż to co wybrano
-            if(pageId === 'home') {
-                document.getElementById('home-page').style.display = 'block';
-            } else if(pageId === 'rules') {
-                document.getElementById('rules-page').style.display = 'block';
-            }
+            // Pokazujemy wybraną stronę
+            document.getElementById(pageId + '-page').style.display = 'block';
         }
     </script>
 

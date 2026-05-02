@@ -1,13 +1,13 @@
-/* --- OGÓLNE USTAWIENIA --- */
+/* --- FUNDAMENTY --- */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Jasne, nowoczesne tło */
-    color: #333;
+    background-color: #1a1c23; /* Ciemne tło gamingowe */
+    color: #ffffff;
     min-height: 100vh;
     position: relative;
-    padding-bottom: 80px; /* Miejsce na stopkę, żeby nie zasłaniała treści */
+    padding-bottom: 80px; /* Miejsce na stopkę */
 }
 
 /* --- NAGŁÓWEK --- */
@@ -15,27 +15,27 @@ header {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 50px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 45px 20px;
+    border-bottom: 3px solid #3498db;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3.5rem;
-    letter-spacing: 2px;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .subtitle {
     color: #3498db;
     font-weight: bold;
-    margin-top: 10px;
-    font-size: 1.2rem;
+    margin-top: 5px;
 }
 
 /* --- UKŁAD STRONY --- */
 .container {
     display: flex;
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 40px auto;
     padding: 0 20px;
     gap: 30px;
@@ -43,50 +43,45 @@ header h1 {
 
 /* --- MENU BOCZNE (BIAŁE KAFELKI) --- */
 .sidebar {
-    width: 250px;
+    width: 240px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .menu-tile {
-    background: white;
-    padding: 18px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    color: #333333;
+    padding: 15px 20px;
+    border-radius: 10px;
     border: none;
     text-align: left;
-    font-size: 1rem;
-}
-
-/* Kafelek tytułowy "Menu" */
-.title-tile {
-    border-left: 6px solid #3498db;
-    background: #fdfdfd;
-    cursor: default;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    color: #3498db;
-}
-
-/* Kafelki interaktywne */
-.link-tile {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+/* Kafelek z napisem Menu */
+.title-tile {
+    background: #3498db;
+    color: white;
+    cursor: default;
+    border-left: 6px solid #2980b9;
 }
 
 .link-tile:hover {
+    background: #f0f0f0;
     transform: translateX(8px);
     color: #3498db;
-    background-color: #ffffff;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .join-text {
-    padding-left: 15px;
+    padding-left: 10px;
     font-size: 0.85rem;
     color: #888;
     margin-top: 5px;
@@ -97,53 +92,40 @@ header h1 {
     flex: 1;
 }
 
+/* Główna karta (biała, dla kontrastu) */
 .card {
-    background: white;
-    padding: 40px;
+    background: #ffffff;
+    color: #333333;
+    padding: 35px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
-
-/* --- SEKCJA REGULAMINU --- */
-.big-title {
-    text-align: center;
-    font-size: 2.8rem;
-    color: #2c3e50;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     margin-bottom: 30px;
-    font-weight: 700;
 }
 
-.rules-box {
-    min-height: 450px; /* Duży biały kwadrat na regulamin */
-    border-top: 6px solid #e74c3c; /* Czerwony akcent dla regulaminu */
-    line-height: 1.8;
-}
-
-/* --- ELEMENTY WEWNĄTRZ KART --- */
-h2 {
+.card h2 {
     margin-top: 0;
     color: #2c3e50;
 }
 
+/* Styl dla IP */
 .ip-box {
     background: #f8f9fa;
-    padding: 20px;
+    padding: 15px 25px;
     border: 2px dashed #3498db;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
     color: #2980b9;
     display: inline-block;
     margin: 15px 0;
+    font-family: monospace;
+    font-size: 1.1rem;
 }
 
 .versions {
     color: #27ae60;
-    font-weight: 600;
+    font-weight: bold;
     background: #f1fcf4;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
 }
 
@@ -151,19 +133,99 @@ hr {
     border: 0;
     height: 1px;
     background: #eee;
-    margin: 35px 0;
+    margin: 30px 0;
+}
+
+/* --- SEKCJA REGULAMINU --- */
+.big-title {
+    text-align: center;
+    font-size: 2.6rem;
+    color: #ffffff; /* Biały napis nad białą kartą */
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.rules-box {
+    min-height: 400px;
+    border-top: 6px solid #e74c3c; /* Czerwony akcent */
+}
+
+/* --- SEKCJA SKLEPU --- */
+.shop-main-title {
+    text-align: center;
+    color: #ffffff; /* Biały główny tytuł na ciemnym tle */
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.shop-subtitle {
+    color: #000000; /* Czarny napis Rangi wewnątrz białej karty */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rank-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.rank-card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    width: 170px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.rank-card:hover {
+    transform: translateY(-8px);
+    border-color: #3498db;
+}
+
+.rank-img-placeholder {
+    background: #f4f4f4;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.rank-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.price {
+    background: #2ecc71; /* Zielony kolor ceny */
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /* --- STOPKA --- */
 .footer-left {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    font-size: 0.9rem;
-    color: #95a5a6;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 0.85rem;
+    color: #555;
+    z-index: 10;
 }
 
-/* --- RESPONSYWNOŚĆ (TELEFONY) --- */
+/* --- RESPONSYWNOŚĆ --- */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -171,12 +233,12 @@ hr {
     .sidebar {
         width: 100%;
     }
+    .rank-card {
+        width: 100%;
+    }
     .footer-left {
         position: static;
         text-align: center;
-        padding: 30px 0;
-    }
-    header h1 {
-        font-size: 2.5rem;
+        padding: 20px;
     }
 }
