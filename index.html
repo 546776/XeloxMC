@@ -6,7 +6,6 @@
     <title>XeloxMC - Serwer Minecraft</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Ikony do gwiazdek -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -44,110 +43,96 @@
                 </section>
             </div>
 
-            <!-- SPOŁECZNOŚĆ (STYLE FACEBOOK) -->
+            <!-- SPOŁECZNOŚĆ -->
             <div id="community-page" style="display: none;">
                 <h1 class="big-white-title">Społeczność</h1>
                 
-                <div class="fb-post">
+                <!-- Dodawanie posta -->
+                <div class="fb-post new-post-box">
                     <div class="post-header">
-                        <img src="https://minotar.net/avatar/Admin/40.png" alt="Admin">
-                        <div>
-                            <span class="post-author">Admin_Xelox</span>
-                            <span class="post-date">Dzisiaj o 14:30</span>
-                        </div>
+                        <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
+                        <textarea id="postInput" placeholder="Napisz coś do społeczności XeloxMC..."></textarea>
                     </div>
-                    <div class="post-content">
-                        Witajcie gracze! Właśnie dodaliśmy nową zakładkę Społeczność na naszej stronie. Jak Wam się podoba? Dajcie znać w zakładce "Oceń nas"! 🚀
-                    </div>
-                    <div class="post-footer">
-                        <button class="fb-btn"><i class="fa fa-thumbs-up"></i> Lubię to!</button>
-                        <button class="fb-btn"><i class="fa fa-comment"></i> Komentuj</button>
+                    <div class="post-footer" style="justify-content: flex-end;">
+                        <button class="buy-btn" style="width: auto; padding: 8px 25px;" onclick="addPost()">Opublikuj</button>
                     </div>
                 </div>
 
-                <div class="fb-post">
-                    <div class="post-header">
-                        <img src="https://minotar.net/avatar/Gracz123/40.png" alt="Gracz">
-                        <div>
-                            <span class="post-author">Gracz_Marcin</span>
-                            <span class="post-date">Wczoraj o 19:15</span>
+                <div id="postContainer">
+                    <div class="fb-post">
+                        <div class="post-header">
+                            <img src="https://minotar.net/avatar/Admin/40.png" alt="Admin">
+                            <div>
+                                <span class="post-author">Admin_Xelox <span class="admin-tag">ADMIN</span></span>
+                                <span class="post-date">Dzisiaj o 14:30</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post-content">
-                        Mój nowy domek na spawnie skończony! Zapraszam wszystkich do odwiedzin. Serwer śmiga bez lagów! 🔥
-                    </div>
-                    <div class="post-footer">
-                        <button class="fb-btn"><i class="fa fa-thumbs-up"></i> Lubię to!</button>
-                        <button class="fb-btn"><i class="fa fa-comment"></i> Komentuj</button>
+                        <div class="post-content">
+                            Witajcie gracze! Właśnie dodaliśmy nową zakładkę Społeczność na naszej stronie. Jak Wam się podoba? Dajcie znać w zakładce "Oceń nas"! 🚀
+                        </div>
+                        <div class="post-footer">
+                            <button class="fb-btn"><i class="fa fa-thumbs-up"></i> Lubię to!</button>
+                            <button class="fb-btn"><i class="fa fa-comment"></i> Komentuj</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SKLEP (5 RANG) -->
+            <!-- SKLEP (Pełne 5 rang) -->
             <div id="shop-page" style="display: none;">
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
                     <h2 class="shop-black-subtitle">Rangi</h2>
                     <div class="rank-list">
-                        <!-- VIP -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <div class="rank-image"><img src="https://minotar.net/helm/Steve/80.png" alt="VIP"></div>
+                                <img src="https://minotar.net/helm/Steve/80.png" alt="VIP">
                                 <div class="rank-main-info">
-                                    <h3>VIP</h3>
-                                    <div class="price">2 ZŁ</div>
+                                    <h3>VIP</h3> <div class="price">2 ZŁ</div>
                                     <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
-                            <div class="rank-desc"><p>Latanie na lobby, prefix VIP i /kit vip.</p></div>
+                            <div class="rank-desc">Latanie na lobby, prefix VIP i /kit vip.</div>
                         </div>
-                        <!-- SVIP -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <div class="rank-image"><img src="https://minotar.net/helm/Alex/80.png" alt="SVIP"></div>
+                                <img src="https://minotar.net/helm/Alex/80.png" alt="SVIP">
                                 <div class="rank-main-info">
-                                    <h3>SVIP</h3>
-                                    <div class="price">5 ZŁ</div>
+                                    <h3>SVIP</h3> <div class="price">5 ZŁ</div>
                                     <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
-                            <div class="rank-desc"><p>/heal, /feed i kolorowe pisanie.</p></div>
+                            <div class="rank-desc">/heal, /feed i kolorowe pisanie.</div>
                         </div>
-                        <!-- SPONSOR -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <div class="rank-image"><img src="https://minotar.net/helm/Herobrine/80.png" alt="Sponsor"></div>
+                                <img src="https://minotar.net/helm/Herobrine/80.png" alt="Sponsor">
                                 <div class="rank-main-info">
-                                    <h3>Sponsor</h3>
-                                    <div class="price">7 ZŁ</div>
+                                    <h3>Sponsor</h3> <div class="price">7 ZŁ</div>
                                     <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
-                            <div class="rank-desc"><p>Dostęp do /ec i unikalny prefix.</p></div>
+                            <div class="rank-desc">Dostęp do /ec i unikalny prefix.</div>
                         </div>
-                        <!-- ELITA -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <div class="rank-image"><img src="https://minotar.net/helm/Dream/80.png" alt="Elita"></div>
+                                <img src="https://minotar.net/helm/Dream/80.png" alt="Elita">
                                 <div class="rank-main-info">
-                                    <h3>Elita</h3>
-                                    <div class="price">10 ZŁ</div>
+                                    <h3>Elita</h3> <div class="price">10 ZŁ</div>
                                     <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
-                            <div class="rank-desc"><p>Latanie wszędzie i zestaw /kit elita.</p></div>
+                            <div class="rank-desc">Latanie wszędzie i zestaw /kit elita.</div>
                         </div>
-                        <!-- XELOXFAN -->
                         <div class="rank-item">
                             <div class="rank-header">
-                                <div class="rank-image"><img src="https://minotar.net/helm/Technoblade/80.png" alt="XeloxFan"></div>
+                                <img src="https://minotar.net/helm/Technoblade/80.png" alt="XeloxFan">
                                 <div class="rank-main-info">
-                                    <h3>XeloxFan</h3>
-                                    <div class="price">20 ZŁ</div>
+                                    <h3>XeloxFan</h3> <div class="price">20 ZŁ</div>
                                     <button class="buy-btn" onclick="openPaymentModal()">KUP TERAZ</button>
                                 </div>
                             </div>
-                            <div class="rank-desc"><p>Najwyższa ranga + efekty wizualne!</p></div>
+                            <div class="rank-desc">Najwyższa ranga + efekty wizualne!</div>
                         </div>
                     </div>
                 </section>
@@ -156,34 +141,28 @@
             <!-- REGULAMIN -->
             <div id="rules-page" style="display: none;">
                 <h1 class="big-white-title">Regulamin</h1>
-                <section class="card">
-                    <p>1. 💎 REGULAMIN SERWERA XELOXMC
-Miejsce stworzone dla graczy, gdzie liczy się dobra zabawa i wzajemny szacunek.
-I. Postanowienia Ogólne
-Zgoda na zasady: Wejście na serwer jest równoznaczne z pełną akceptacją niniejszego regulaminu.
-Świadomość: Nieznajomość regulaminu nie zwalnia z odpowiedzialności za jego łamanie.
-Filozofia: XeloxMC to Safe Space – dbamy o to, by każdy czuł się tutaj bezpiecznie, swobodnie i bez obaw o dyskryminację.
-II. Zachowanie i Społeczność
-Szacunek ponad wszystko: Obowiązuje kategoryczny zakaz mowy nienawiści, homofobii, transfobii, rasizmu oraz wszelkich form dyskryminacji.
-Kultura osobista: Unikaj nadmiernego przeklinania, wyzywania innych graczy oraz spamowania. Tworzymy zgraną społeczność, nie toksyczne środowisko.
-Prywatność (Doxxing): Surowy zakaz udostępniania danych osobowych (swoich oraz innych graczy). Naruszenie tej zasady kończy się permanentnym banem.
-Reklama: Zakaz promowania innych serwerów Minecraft, stron czy kanałów bez zgody administracji.
-III. Mechanika i Rozgrywka
-Fair Play: Obowiązuje całkowity zakaz używania wspomagaczy (X-Ray, KillAura, Fly itp.). Gramy czysto i uczciwie!
-Ochrona mienia: Zakaz niszczenia budowli innych graczy (griefing) oraz okradania ich skrzyń (chyba że tryb serwera wyraźnie na to pozwala).
-Stabilność: Zakaz budowania maszyn mających na celu celowe lagowanie serwera (np. farmy niszczące wydajność chunków).
-Wizerunek: Nick oraz skin gracza nie mogą być ofensywne, erotyczne ani szerzyć nienawiści.
-IV. Administracja i Wsparcie
-Decyzyjność: Administracja ma ostateczne słowo w sprawach spornych.
-Współpraca: Zakaz okłamywania administracji oraz utrudniania pracy członkom ekipy.
-Zgłoszenia: Wszelkie skargi i błędy należy zgłaszać na dedykowanym kanale (np. Ticket na Discordzie).
-V. System Kar
-W zależności od skali przewinienia, administracja może zastosować:
-📢 Ostrzeżenie (Warn)
-🔇 Wyciszenie (Mute)
-👟 Wyrzucenie (Kick)
-🚫 Ban czasowy lub permanentny
-Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil na serwerze!.</p>
+                <section class="card rules-container">
+                    <h2>💎 REGULAMIN SERWERA XELOXMC</h2>
+                    <p>Miejsce stworzone dla graczy, gdzie liczy się dobra zabawa i wzajemny szacunek.</p>
+                    <div class="rules-section">
+                        <h3>I. Postanowienia Ogólne</h3>
+                        <ul>
+                            <li>Wejście na serwer oznacza akceptację regulaminu.</li>
+                            <li>Nieznajomość regulaminu nie zwalnia z odpowiedzialności.</li>
+                            <li>XeloxMC to Safe Space – dbamy o każdego gracza.</li>
+                        </ul>
+                        <h3>II. Zachowanie</h3>
+                        <ul>
+                            <li>Zakaz mowy nienawiści, rasizmu i dyskryminacji.</li>
+                            <li>Zakaz udostępniania danych osobowych (Doxxing).</li>
+                            <li>Zakaz reklamowania innych serwerów.</li>
+                        </ul>
+                        <h3>III. Rozgrywka</h3>
+                        <ul>
+                            <li>Całkowity zakaz cheatów (X-Ray, KillAura itp.).</li>
+                            <li>Zakaz niszczenia budowli innych graczy.</li>
+                        </ul>
+                    </div>
                 </section>
             </div>
 
@@ -192,9 +171,8 @@ Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil n
                 <h1 class="big-white-title">Pomoc</h1>
                 <section class="card">
                     <h3>Najczęstsze Pytania (FAQ)</h3>
-                    <p><strong>Jak dołączyć?</strong> <br> Skopiuj IP ze strony głównej i dodaj je w Minecraft (wersja 1.21+).</p>
-                    <p><strong>Nie dostałem rangi, co robić?</strong> <br> Wejdź na nasz Discord i napisz do administratora w dziale pomoc.</p>
-                    <p><strong>Jak zgłosić cheatera?</strong> <br> Użyj komendy /report [nick] [powód] na serwerze.</p>
+                    <p><strong>Jak dołączyć?</strong> <br> Skopiuj IP ze strony głównej i dodaj je w Minecraft (1.21+).</p>
+                    <p><strong>Nie dostałem rangi?</strong> <br> Napisz do nas na Discordzie w dziale pomoc!</p>
                 </section>
             </div>
 
@@ -203,39 +181,39 @@ Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil n
                 <h1 class="big-white-title">Oceń nasz serwer!</h1>
                 <section class="card">
                     <div class="rating-form">
-                        <h3>Zostaw opinię:</h3>
-                        <div class="stars">
-                            <input type="radio" name="star" id="star5"><label for="star5" class="fa fa-star"></label>
-                            <input type="radio" name="star" id="star4"><label for="star4" class="fa fa-star"></label>
-                            <input type="radio" name="star" id="star3"><label for="star3" class="fa fa-star"></label>
-                            <input type="radio" name="star" id="star2"><label for="star2" class="fa fa-star"></label>
-                            <input type="radio" name="star" id="star1"><label for="star1" class="fa fa-star"></label>
+                        <h3>Twoja opinia:</h3>
+                        <div class="stars-input">
+                            <input type="radio" name="star" id="s5" value="5"><label for="s5" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="s4" value="4"><label for="s4" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="s3" value="3"><label for="s3" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="s2" value="2"><label for="s2" class="fa fa-star"></label>
+                            <input type="radio" name="star" id="s1" value="1"><label for="s1" class="fa fa-star"></label>
                         </div>
-                        <textarea placeholder="Napisz co sądzisz o XeloxMC..."></textarea>
-                        <button class="buy-btn" onclick="alert('Dziękujemy za opinię! (To tylko podgląd)')">Wyślij opinię</button>
+                        <input type="text" id="rateNick" placeholder="Twój nick Minecraft...">
+                        <textarea id="rateText" placeholder="Co sądzisz o serwerze?"></textarea>
+                        <button class="buy-btn" onclick="submitRating()">Dodaj opinię</button>
                     </div>
-
                     <hr>
-                    <div class="review">
-                        <strong>⭐⭐⭐⭐⭐ - Jan Kowalski</strong>
-                        <p>Najlepszy serwer na jakim grałem, miła administracja!</p>
+                    <div id="reviews-list">
+                        <div class="review">
+                            <strong>⭐⭐⭐⭐⭐ - Jan Kowalski</strong>
+                            <p>Najlepszy serwer na jakim grałem, miła administracja!</p>
+                        </div>
                     </div>
                 </section>
             </div>
-
         </main>
     </div>
 
-    <!-- OKNO PŁATNOŚCI -->
+    <!-- MODAL PŁATNOŚCI -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h2 style="color:#000">Metody płatności</h2>
+            <h2 style="color:black">Wybierz płatność</h2>
             <div class="payment-buttons">
                 <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn paypal">PayPal</a>
                 <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn psc">PaySafeCard</a>
             </div>
-            <p style="color:#666; font-size: 0.8rem; margin-top:15px;">Finalizacja na Discordzie.</p>
         </div>
     </div>
 
@@ -250,22 +228,44 @@ Administracja XeloxMC życzy wszystkim udanej przygody i niezapomnianych chwil n
 
         function openPaymentModal() { document.getElementById('paymentModal').style.display = 'flex'; }
         function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
+
+        // --- FUNKCJA OCENIANIA ---
+        function submitRating() {
+            const nick = document.getElementById('rateNick').value || "Anonim";
+            const text = document.getElementById('rateText').value;
+            const stars = document.querySelector('input[name="star"]:checked');
+
+            if(!text || !stars) { alert("Wybierz gwiazdki i wpisz tekst!"); return; }
+
+            const starIcons = "⭐".repeat(stars.value);
+            const newReview = `
+                <div class="review new-entry">
+                    <strong>${starIcons} - ${nick}</strong>
+                    <p>${text}</p>
+                </div>
+            `;
+            document.getElementById('reviews-list').insertAdjacentHTML('afterbegin', newReview);
+            document.getElementById('rateText').value = "";
+            document.getElementById('rateNick').value = "";
+        }
+
+        // --- FUNKCJA POSTÓW ---
+        function addPost() {
+            const content = document.getElementById('postInput').value;
+            if(!content) return;
+
+            const postHtml = `
+                <div class="fb-post new-entry">
+                    <div class="post-header">
+                        <img src="https://minotar.net/avatar/Steve/40.png" alt="User">
+                        <div><span class="post-author">Ty</span><span class="post-date">Przed chwilą</span></div>
+                    </div>
+                    <div class="post-content">${content}</div>
+                </div>
+            `;
+            document.getElementById('postContainer').insertAdjacentHTML('afterbegin', postHtml);
+            document.getElementById('postInput').value = "";
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-               
-
-
-
-
