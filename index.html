@@ -19,6 +19,9 @@
         <nav class="sidebar">
             <div class="menu-tile title-tile">Menu</div>
             <button class="menu-tile link-tile" onclick="showPage('home')">Strona Główna</button>
+            <button class="menu-tile link-tile" onclick="showPage('description')">Opis serwera</button>
+            <button class="menu-tile link-tile" onclick="showPage('news')">Ogłoszenia</button>
+            <button class="menu-tile link-tile" onclick="showPage('staff')">Ekipa</button>
             <button class="menu-tile link-tile" onclick="showPage('community')">Społeczność</button>
             <button class="menu-tile link-tile" onclick="showPage('shop')">Sklep</button>
             <button class="menu-tile link-tile" onclick="showPage('rules')">Regulamin</button>
@@ -35,6 +38,56 @@
                     <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
                     <h2>Wersje</h2>
                     <p class="versions">1.21 - 1.21.1</p>
+                </section>
+            </div>
+
+            <!-- OPIS SERWERA -->
+            <div id="description-page" style="display: none;">
+                <h1 class="big-white-title">O serwerze XeloxMC</h1>
+                <section class="card">
+                    <h3>Witaj na przygodzie!</h3>
+                    <p style="line-height: 1.6;">XeloxMC to unikalny serwer, który łączy klasyczną rozgrywkę z nowoczesnymi dodatkami. Naszym celem jest stworzenie miejsca, gdzie każdy gracz czuje się swobodnie.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>🔹 <strong>Ekonomia:</strong> Rozbudowany system handlu.</li>
+                        <li>🔹 <strong>Wydajność:</strong> Stabilna gra na wersji 1.21.</li>
+                        <li>🔹 <strong>Atmosfera:</strong> Brak toksyczności i pomocna administracja.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- OGŁOSZENIA -->
+            <div id="news-page" style="display: none;">
+                <h1 class="big-white-title">Ogłoszenia</h1>
+                <div class="card">
+                    <span style="color: #3498db; font-size: 0.8rem; font-weight: bold;">04.05.2026</span>
+                    <h3 style="margin: 5px 0;">Wielkie Otwarcie!</h3>
+                    <p>Serwer XeloxMC został oficjalnie otwarty. Zapraszamy do wspólnej gry!</p>
+                </div>
+                <div class="card">
+                    <span style="color: #3498db; font-size: 0.8rem; font-weight: bold;">02.05.2026</span>
+                    <h3 style="margin: 5px 0;">Aktualizacja Sklepu</h3>
+                    <p>Dodaliśmy nowe rangi oraz ulepszyliśmy system płatności przez Discord.</p>
+                </div>
+            </div>
+
+            <!-- EKIPA -->
+            <div id="staff-page" style="display: none;">
+                <h1 class="big-white-title">Nasza Ekipa</h1>
+                <section class="card">
+                    <div class="rank-list">
+                        <div class="rank-item" style="border-left-color: #e74c3c;">
+                            <div class="rank-header">
+                                <img src="https://minotar.net/helm/Steve/60.png">
+                                <div class="rank-main-info"><h3>Admin_Nick</h3><div class="price" style="color:#e74c3c">WŁAŚCICIEL</div></div>
+                            </div>
+                        </div>
+                        <div class="rank-item" style="border-left-color: #2ecc71;">
+                            <div class="rank-header">
+                                <img src="https://minotar.net/helm/Alex/60.png">
+                                <div class="rank-main-info"><h3>Mod_Nick</h3><div class="price" style="color:#2ecc71">MODERATOR</div></div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
 
@@ -79,20 +132,6 @@
                                 <button class="buy-btn">KUP</button>
                             </div>
                         </div>
-                        <div class="rank-item" onclick="openPaymentModal('Elita')">
-                            <div class="rank-header">
-                                <img src="https://minotar.net/helm/Notch/60.png">
-                                <div class="rank-main-info"><h3>Elita</h3><div class="price">16.00 ZŁ</div></div>
-                                <button class="buy-btn">KUP</button>
-                            </div>
-                        </div>
-                        <div class="rank-item" onclick="openPaymentModal('XeloxFun')">
-                            <div class="rank-header">
-                                <img src="https://minotar.net/helm/MHF_Golem/60.png">
-                                <div class="rank-main-info"><h3>Legendarny</h3><div class="price">20.00 ZŁ</div></div>
-                                <button class="buy-btn">KUP</button>
-                            </div>
-                        </div>
                     </div>
                 </section>
             </div>
@@ -101,28 +140,18 @@
             <div id="rules-page" style="display: none;">
                 <h1 class="big-white-title">Regulamin</h1>
                 <section class="card rules-box">
-                    <h3>Postanowienia Ogólne</h3>
+                    <h3>I. Zasady Ogólne</h3>
                     <ul>
                         <li>1. Nieznajomość regulaminu nie zwalnia z jego przestrzegania.</li>
-                        <li>2. Administracja ma prawo do zmiany regulaminu bez uprzedzenia.</li>
-                        <li>3. Każdy gracz zobowiązany jest do godnego reprezentowania serwera.</li>
+                        <li>2. Administracja ma prawo do zmiany regulaminu.</li>
                     </ul>
-                    <h3>II. Zasady Rozgrywki</h3>
+                    <h3>II. Rozgrywka</h3>
                     <ul>
-                        <li>1. Zakaz używania cheatów (X-Ray, Killaura, Fly itp.).</li>
-                        <li>2. Zakaz wykorzystywania błędów gry - należy je zgłaszać.</li>
-                        <li>3. Zakaz griefowania i niszczenia cudzych budowli.</li>
-                        <li>4. Zakaz reklamowania innych serwerów oraz stron WWW.</li>
-                    </ul>
-                    <h3>III. Kultura i Zachowanie</h3>
-                    <ul>
-                        <li>1. Zakaz obrażania innych graczy oraz administracji.</li>
-                        <li>2. Czat służy do komunikacji, zakaz spamu i nadmiernego Caps Locka.</li>
-                        <li>3. Zabrania się szerzenia mowy nienawiści.</li>
+                        <li>1. Zakaz używania wspomagaczy (cheatów).</li>
+                        <li>2. Zakaz niszczenia budowli innych graczy.</li>
                     </ul>
                 </section>
             </div>
-
 
             <!-- OCEŃ NAS -->
             <div id="rate-page" style="display: none;">
@@ -153,22 +182,25 @@
             <h2 style="color:#333;">Zakup: <span id="currentRank">Ranga</span></h2>
             <p style="color: #666; margin-bottom: 20px;">Wybierz metodę płatności (DC):</p>
             <div class="payment-buttons">
-                <!-- TUTAJ WKLEJ SWÓJ LINK DO DISCORDA -->
-                <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn paypal">PayPal</a>
-                <a href="https://discord.com/channels/1489286329413013714/1497206104097165383" target="_blank" class="pay-btn psc">PaySafeCard</a>
+                <a href="https://discord.gg/TWOJ-LINK" target="_blank" class="pay-btn paypal">PayPal</a>
+                <a href="https://discord.gg/TWOJ-LINK" target="_blank" class="pay-btn psc">PaySafeCard</a>
             </div>
         </div>
     </div>
 
     <script>
+        // FUNKCJA PRZEŁĄCZANIA STRON
         function showPage(pageId) {
-            ['home', 'community', 'shop', 'rules', 'rate'].forEach(p => {
-                document.getElementById(p + '-page').style.display = 'none';
+            const pages = ['home', 'description', 'news', 'staff', 'community', 'shop', 'rules', 'rate'];
+            pages.forEach(p => {
+                const el = document.getElementById(p + '-page');
+                if(el) el.style.display = 'none';
             });
             document.getElementById(pageId + '-page').style.display = 'block';
             window.scrollTo(0,0);
         }
 
+        // RESZTA FUNKCJI (SPOŁECZNOŚĆ, OCENY)
         function loadData() {
             const posts = JSON.parse(localStorage.getItem('xelox_posts')) || [];
             const reviews = JSON.parse(localStorage.getItem('xelox_reviews')) || [];
