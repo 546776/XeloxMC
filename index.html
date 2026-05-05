@@ -121,6 +121,9 @@
             <div id="shop-page" style="display: none;">
                 <h1 class="big-white-title">Sklep</h1>
                 <section class="card">
+                    
+                    <!-- PODKATEGORIA RANGI -->
+                    <h2 style="color: #333; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Rangi</h2>
                     <div class="rank-list">
                         <div class="rank-item" onclick="openPaymentModal('VIP')">
                             <div class="rank-header">
@@ -128,7 +131,7 @@
                                 <div class="rank-main-info">
                                     <h3>VIP</h3>
                                     <div class="price">5.00 ZŁ</div>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Dostajesz: /kit vip /heal oraz unikalny prefix VIP i szybka pomoc administracji!</p>
+                                    <p style="font-size: 0.8rem; color: #777; margin-top: 5px;">Dostajesz: /fly, /heal oraz prefix!</p>
                                 </div>
                                 <button class="buy-btn">KUP</button>
                             </div>
@@ -139,7 +142,7 @@
                                 <div class="rank-main-info">
                                     <h3>SVIP</h3>
                                     <div class="price">7.00 ZŁ</div>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Dostajesz: Wszystko co VIP + /feed i /kit svip!</p>
+                                    <p style="font-size: 0.8rem; color: #777; margin-top: 5px;">Dostajesz: To co VIP + /kit svip!</p>
                                 </div>
                                 <button class="buy-btn">KUP</button>
                             </div>
@@ -150,7 +153,7 @@
                                 <div class="rank-main-info">
                                     <h3>Sponsor</h3>
                                     <div class="price">12.00 ZŁ</div>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Dostajesz: Wszystko co SVIP + /back oraz kolorowy nick!</p>
+                                    <p style="font-size: 0.8rem; color: #777; margin-top: 5px;">Dostajesz: /back oraz kolorowy nick!</p>
                                 </div>
                                 <button class="buy-btn">KUP</button>
                             </div>
@@ -161,18 +164,34 @@
                                 <div class="rank-main-info">
                                     <h3>Elita</h3>
                                     <div class="price">16.00 ZŁ</div>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Dostajesz: Wszystko co Sponsor + /hat!</p>
+                                    <p style="font-size: 0.8rem; color: #777; margin-top: 5px;">Dostajesz: /nick i dostęp do /hat!</p>
                                 </div>
                                 <button class="buy-btn">KUP</button>
                             </div>
                         </div>
-                        <div class="rank-item" onclick="openPaymentModal('XeloxFun')">
+                    </div>
+
+                    <!-- PODKATEGORIA ITEMY -->
+                    <h2 style="color: #333; font-size: 1.2rem; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Itemy</h2>
+                    <div class="rank-list">
+                        <div class="rank-item" onclick="openPaymentModal('Klucz Legendarny')">
                             <div class="rank-header">
-                                <img src="https://minotar.net/helm/MHF_OakLog/40.png">
+                                <img src="https://minotar.net/helm/MHF_Chest/60.png">
                                 <div class="rank-main-info">
-                                    <h3>XeloxFun</h3>
-                                    <div class="price">20.00 ZŁ</div>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Dostajesz: Dostajesz: Wszystko co Sponsor + /fly!</p>
+                                    <h3>Klucz Legendarny</h3>
+                                    <div class="price">3.00 ZŁ</div>
+                                    <p style="font-size: 0.8rem; color: #777; margin-top: 5px;">Dostajesz: 1x Klucz do skrzyń!</p>
+                                </div>
+                                <button class="buy-btn">KUP</button>
+                            </div>
+                        </div>
+                        <div class="rank-item" onclick="openPaymentModal('UnBan')">
+                            <div class="rank-header">
+                                <img src="https://minotar.net/helm/MHF_TNT/60.png">
+                                <div class="rank-main-info">
+                                    <h3>UnBan</h3>
+                                    <div class="price">10.00 ZŁ</div>
+                                    <p style="font-size: 0.8rem; color: #777; margin-top: 5px;">Dostajesz: Drugą szansę na serwerze!</p>
                                 </div>
                                 <button class="buy-btn">KUP</button>
                             </div>
@@ -184,35 +203,12 @@
             <!-- REGULAMIN -->
             <div id="rules-page" style="display: none;">
                 <h1 class="big-white-title">Regulamin</h1>
-                <section class="card rules-box">
-                    <div style="line-height: 1.8;">
-                        <h3 style="color: #3498db;">💎 REGULAMIN SERWERA XELOXMC</h3>
-                        <p>Miejsce stworzone dla graczy, gdzie liczy się dobra zabawa i wzajemny szacunek.</p>
-                        
-                        <strong>I. Postanowienia Ogólne</strong>
-                        <ul>
-                            <li>Wejście na serwer jest równoznaczne z pełną akceptacją niniejszego regulaminu.</li>
-                            <li>Nieznajomość regulaminu nie zwalnia z odpowiedzialności za jego łamanie.</li>
-                            <li>XeloxMC to Safe Space – dbamy o to, by każdy czuł się tutaj bezpiecznie.</li>
-                        </ul>
-
-                        <strong>II. Zachowanie i Społeczność</strong>
-                        <ul>
-                            <li>Obowiązuje kategoryczny zakaz mowy nienawiści, homofobii oraz rasizmu.</li>
-                            <li>Unikaj nadmiernego przeklinania i spamowania.</li>
-                            <li>Surowy zakaz udostępniania danych osobowych innych graczy.</li>
-                        </ul>
-
-                        <strong>III. Mechanika i Rozgrywka</strong>
-                        <ul>
-                            <li>Całkowity zakaz używania wspomagaczy (cheatów).</li>
-                            <li>Zakaz niszczenia budowli innych graczy oraz celowego lagowania serwera.</li>
-                            <li>Nick oraz skin gracza nie mogą być ofensywne.</li>
-                        </ul>
-
-                        <strong>IV. System Kar</strong>
-                        <p>📢 Ostrzeżenie | 🔇 Wyciszenie | 👟 Wyrzucenie | 🚫 Ban czasowy lub permanentny</p>
-                    </div>
+                <section class="card rules-box" style="line-height: 1.8;">
+                    <h3 style="color: #3498db;">💎 REGULAMIN SERWERA XELOXMC</h3>
+                    <p><strong>I. Zasady Ogólne:</strong> Wejście na serwer oznacza akceptację zasad. Nieznajomość regulaminu nie zwalnia z kar.</p>
+                    <p><strong>II. Społeczność:</strong> Zakaz mowy nienawiści, rasizmu i toksyczności. Szanuj innych graczy.</p>
+                    <p><strong>III. Gra:</strong> Zakaz używania cheatów i wspomagaczy. Fair play to podstawa!</p>
+                    <p><strong>IV. Prywatność:</strong> Zakaz udostępniania danych osobowych innych osób.</p>
                 </section>
             </div>
 
